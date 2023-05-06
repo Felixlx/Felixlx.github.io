@@ -6,7 +6,7 @@
   <link href="https://felixlx.github.io/atom.xml" rel="self"/>
   
   <link href="https://felixlx.github.io/"/>
-  <updated>2023-05-04T12:26:28.702Z</updated>
+  <updated>2023-05-06T16:44:53.753Z</updated>
   <id>https://felixlx.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一点小知识</title>
+    <link href="https://felixlx.github.io/2023/05/07/yi-dian-xiao-zhi-shi/"/>
+    <id>https://felixlx.github.io/2023/05/07/yi-dian-xiao-zhi-shi/</id>
+    <published>2023-05-06T16:20:17.000Z</published>
+    <updated>2023-05-06T16:44:53.753Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;eks中启用secret加密&quot;&gt;&lt;a href=&quot;#eks中启用secret加密&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="未完待续" scheme="https://felixlx.github.io/categories/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/"/>
+    
+    
+    <category term="eks" scheme="https://felixlx.github.io/tags/eks/"/>
+    
+  </entry>
   
   <entry>
     <title>tittle test</title>

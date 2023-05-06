@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>一点小知识</title>
+      <link href="/2023/05/07/yi-dian-xiao-zhi-shi/"/>
+      <url>/2023/05/07/yi-dian-xiao-zhi-shi/</url>
+      
+        <content type="html"><![CDATA[<h3 id="eks中启用secret加密"><a href="#eks中启用secret加密" class="headerlink" title="eks中启用secret加密"></a>eks中启用secret加密</h3><blockquote><p>eks可以启用为集群中加密的功能，这个功能能够确保 <em>合规性</em> ，同时不需要用户介入操作</p></blockquote><p>使用方法很简单，用户有 create grant的权限就能够为eks集群启用<br>启用过后可以看到一个creategrant的cloudtrail，这时候再用命令创建secret就能够实现自动加密<br>这里的坑是说不能删除这个key 同时不能手动revoke这个grant 否则即便加回来也不能正常使用了， 这里怀疑跟信封加密或者主密钥在eks的缓存相关，未验证。</p><pre class="line-numbers language-none"><code class="language-none">删了grant报错如下 k create secret generic --from-literal i=b testierror: failed to create secret Internal error occurred: rpc error: code = DeadlineExceeded desc = latest balancer error: connection error: desc = "transport: Error while dialing dial unix /var/run/kmsplugin/socket.sock: connect: no such file or directory"[ec2-user@ip-10-0-0-34 ~]$ k create secret generic --from-literal i=b testierror: failed to create secret Internal error occurred: rpc error: code = DeadlineExceeded desc = latest balancer error: connection error: desc = "transport: Error while dialing dial unix /var/run/kmsplugin/socket.sock: connect: no such file or directory"[ec2-user@ip-10-0-0-34 ~]$ k create secret generic --from-literal i=b testierror: failed to create secret Internal error occurred: rpc error: code = DeadlineExceeded desc = latest balancer error: connection error: desc = "transport: Error while dialing dial unix /var/run/kmsplugin/socket.sock: connect: no such file or directory"[ec2-user@ip-10-0-0-34 ~]$ k get secrets testh -o yamlapiVersion: v1data:  h: Yg==kind: Secretmetadata:  creationTimestamp: "2023-05-06T10:06:50Z"  name: testh  namespace: default  resourceVersion: "82014"  uid: 8ce8f4e0-c266-4ae7-b42b-27e24821415etype: Opaque把那个grant手动加回来报错如下[ec2-user@ip-10-0-0-34 ~]$ k create secret generic --from-literal i=b testierror: failed to create secret Internal error occurred: rpc error: code = Unknown desc = failed to encrypt AccessDeniedException:        status code: 400, request id: 2221568f-8f6e-44ce-ac5f-fcd34a571548[ec2-user@ip-10-0-0-34 ~]$ client_loop: send disconnect: Connection reset<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 未完待续 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> eks </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>tittle test</title>
       <link href="/2023/05/04/first-page/"/>
       <url>/2023/05/04/first-page/</url>
