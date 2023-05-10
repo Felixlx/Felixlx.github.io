@@ -6,7 +6,7 @@
   <link href="https://felixlx.github.io/atom.xml" rel="self"/>
   
   <link href="https://felixlx.github.io/"/>
-  <updated>2023-05-10T12:29:55.971Z</updated>
+  <updated>2023-05-10T13:27:12.452Z</updated>
   <id>https://felixlx.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>xray 采样规则测试</title>
+    <link href="https://felixlx.github.io/2023/05/10/xray-cai-yang-gui-ze-ce-shi/"/>
+    <id>https://felixlx.github.io/2023/05/10/xray-cai-yang-gui-ze-ce-shi/</id>
+    <published>2023-05-10T12:39:48.000Z</published>
+    <updated>2023-05-10T13:27:12.452Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;本文follow @zhaojiew 的测试进行，原文连接如下:&lt;br&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="xray, js" scheme="https://felixlx.github.io/tags/xray-js/"/>
+    
+  </entry>
   
   <entry>
     <title>karpenter 安装使用</title>
