@@ -4,11 +4,16 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="一点小知识, [object Object]">
-    <meta name="description" content="eks中启用secret加密
-eks可以启用为集群中加密的功能，这个功能能够确保 合规性 ，同时不需要用户介入操作
+    <meta name="keywords" content="karpenter 安装使用, [object Object]">
+    <meta name="description" content="
+本文内容非常基础，就是熟悉一下写博客，建议不用看，就是一些官方文档内容  
 
-使用方法很简单，用户有 create grant的权限就能够为eks集群启用启用过后可以看到一个creategrant的c">
+karpenter installexport KARPENTER_VERSION=v0.27.3
+
+
+
+
+export CLUSTER_NAME=&#34;${USE">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +25,7 @@ eks可以启用为集群中加密的功能，这个功能能够确保 合规性 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>一点小知识 | Felix</title>
+    <title>karpenter 安装使用 | Felix</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -316,12 +321,12 @@ eks可以启用为集群中加密的功能，这个功能能够确保 合规性 
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">一点小知识</h1>
+                    <h1 class="description center-align post-title">karpenter 安装使用</h1>
                 </div>
             </div>
         </div>
@@ -345,23 +350,14 @@ eks可以启用为集群中加密的功能，这个功能能够确保 合规性 
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/eks/">
-                                <span class="chip bg-color">eks</span>
+                            <a href="/tags/karpenter/">
+                                <span class="chip bg-color">karpenter</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/" class="post-category">
-                                未完待续
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -370,7 +366,7 @@ eks可以启用为集群中加密的功能，这个功能能够确保 合规性 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-05-07
+                    2023-05-10
                 </div>
                 
 
@@ -394,39 +390,211 @@ eks可以启用为集群中加密的功能，这个功能能够确保 合规性 
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="eks中启用secret加密"><a href="#eks中启用secret加密" class="headerlink" title="eks中启用secret加密"></a>eks中启用secret加密</h3><blockquote>
-<p>eks可以启用为集群中加密的功能，这个功能能够确保 <em>合规性</em> ，同时不需要用户介入操作</p>
+                <blockquote>
+<p>本文内容非常基础，就是熟悉一下写博客，建议不用看，就是一些官方文档内容  </p>
 </blockquote>
-<p>使用方法很简单，用户有 create grant的权限就能够为eks集群启用<br>启用过后可以看到一个creategrant的cloudtrail，这时候再用命令创建secret就能够实现自动加密<br>这里的坑是说不能删除这个key 同时不能手动revoke这个grant 否则即便加回来也不能正常使用了， 这里怀疑跟信封加密或者主密钥在eks的缓存相关，未验证。</p>
-<pre class="line-numbers language-none"><code class="language-none">删了grant报错如下
- k create secret generic --from-literal i=b testi
-error: failed to create secret Internal error occurred: rpc error: code = DeadlineExceeded desc = latest balancer error: connection error: desc = "transport: Error while dialing di
-al unix /var/run/kmsplugin/socket.sock: connect: no such file or directory"
-[ec2-user@ip-10-0-0-34 ~]$ k create secret generic --from-literal i=b testi
-error: failed to create secret Internal error occurred: rpc error: code = DeadlineExceeded desc = latest balancer error: connection error: desc = "transport: Error while dialing di
-al unix /var/run/kmsplugin/socket.sock: connect: no such file or directory"
-[ec2-user@ip-10-0-0-34 ~]$ k create secret generic --from-literal i=b testi
-error: failed to create secret Internal error occurred: rpc error: code = DeadlineExceeded desc = latest balancer error: connection error: desc = "transport: Error while dialing di
-al unix /var/run/kmsplugin/socket.sock: connect: no such file or directory"
-[ec2-user@ip-10-0-0-34 ~]$ k get secrets testh -o yaml
-apiVersion: v1
-data:
-  h: Yg==
-kind: Secret
+<h2 id="karpenter-install"><a href="#karpenter-install" class="headerlink" title="karpenter install"></a>karpenter install</h2><pre class="line-numbers language-none"><code class="language-none">export KARPENTER_VERSION=v0.27.3
+
+
+
+
+export CLUSTER_NAME="${USER}-karpenter-demo"
+export AWS_DEFAULT_REGION="cn-north-1"
+export AWS_ACCOUNT_ID="$(aws sts get-caller-identity --query Account --output text)"
+export TEMPOUT=$(mktemp)
+
+
+echo $KARPENTER_VERSION $CLUSTER_NAME $AWS_DEFAULT_REGION $AWS_ACCOUNT_ID $TEMPOUT<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">curl -fsSL https://karpenter.sh/"${KARPENTER_VERSION}"/getting-started/getting-started-with-karpenter/cloudformation.yaml  &gt; $TEMPOUT &amp;&amp; aws cloudformation deploy   --stack-name "Karpenter-${CLUSTER_NAME}"   --template-file "${TEMPOUT}"   --capabilities CAPABILITY_NAMED_IAM   --parameter-overrides "ClusterName=${CLUSTER_NAME}"
+
+eksctl create cluster -f - &lt;&lt;EOF
+---
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
 metadata:
-  creationTimestamp: "2023-05-06T10:06:50Z"
-  name: testh
-  namespace: default
-  resourceVersion: "82014"
-  uid: 8ce8f4e0-c266-4ae7-b42b-27e24821415e
-type: Opaque
+  name: ${CLUSTER_NAME}
+  region: ${AWS_DEFAULT_REGION}
+  version: "1.24"
+  tags:
+    karpenter.sh/discovery: ${CLUSTER_NAME}
 
-把那个grant手动加回来报错如下
+iam:
+  withOIDC: true
+  serviceAccounts:
+  - metadata:
+      name: karpenter
+      namespace: karpenter
+    roleName: ${CLUSTER_NAME}-karpenter
+    attachPolicyARNs:
+    - arn:aws-cn:iam::${AWS_ACCOUNT_ID}:policy/KarpenterControllerPolicy-${CLUSTER_NAME}
+    roleOnly: true
 
-[ec2-user@ip-10-0-0-34 ~]$ k create secret generic --from-literal i=b testi
-error: failed to create secret Internal error occurred: rpc error: code = Unknown desc = failed to encrypt AccessDeniedException:
-        status code: 400, request id: 2221568f-8f6e-44ce-ac5f-fcd34a571548
-[ec2-user@ip-10-0-0-34 ~]$ client_loop: send disconnect: Connection reset<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+iamIdentityMappings:
+- arn: "arn:aws-cn:iam::${AWS_ACCOUNT_ID}:role/KarpenterNodeRole-${CLUSTER_NAME}"
+  username: system:node:{{EC2PrivateDNSName}}
+  groups:
+  - system:bootstrappers
+  - system:nodes
+
+managedNodeGroups:
+- instanceType: m5.large
+  amiFamily: AmazonLinux2
+  name: ${CLUSTER_NAME}-ng
+  desiredCapacity: 2
+  minSize: 1
+  maxSize: 10
+
+## Optionally run on fargate
+# fargateProfiles:
+# - name: karpenter
+#  selectors:
+#  - namespace: karpenter
+EOF
+
+export CLUSTER_ENDPOINT="$(aws eks describe-cluster --name ${CLUSTER_NAME} --query "cluster.endpoint" --output text)"
+export KARPENTER_IAM_ROLE_ARN="arn:aws-cn:iam::${AWS_ACCOUNT_ID}:role/${CLUSTER_NAME}-karpenter"
+
+echo $CLUSTER_ENDPOINT $KARPENTER_IAM_ROLE_ARN<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">aws iam create-service-linked-role --aws-service-name spot.amazonaws.com || true
+# If the role has already been successfully created, you will see:
+# An error occurred (InvalidInput) when calling the CreateServiceLinkedRole operation: Service role name AWSServiceRoleForEC2Spot has been taken in this account, please try a different suffix.
+
+
+
+docker logout public.ecr.aws
+
+helm upgrade --install karpenter oci://public.ecr.aws/karpenter/karpenter --version ${KARPENTER_VERSION} --namespace karpenter --create-namespace   --set serviceAccount.annotations."eks\.amazonaws\.com/role-arn"=${KARPENTER_IAM_ROLE_ARN}   --set settings.aws.clusterName=${CLUSTER_NAME}   --set settings.aws.defaultInstanceProfile=KarpenterNodeInstanceProfile-${CLUSTER_NAME}   --set settings.aws.interruptionQueueName=${CLUSTER_NAME}   --set controller.resources.requests.cpu=1   --set controller.resources.requests.memory=1Gi   --set controller.resources.limits.cpu=1   --set controller.resources.limits.memory=1Gi   --wait<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+
+
+<pre class="line-numbers language-none"><code class="language-none">cat &lt;&lt;EOF | kubectl apply -f -
+apiVersion: karpenter.sh/v1alpha5
+kind: Provisioner
+metadata:
+  name: default
+spec:
+  requirements:
+    - key: karpenter.sh/capacity-type
+      operator: In
+      values: ["spot"]
+  limits:
+    resources:
+      cpu: 1000
+  providerRef:
+    name: default
+  ttlSecondsAfterEmpty: 30
+---
+apiVersion: karpenter.k8s.aws/v1alpha1
+kind: AWSNodeTemplate
+metadata:
+  name: default
+spec:
+  subnetSelector:
+    karpenter.sh/discovery: ${CLUSTER_NAME}
+  securityGroupSelector:
+    karpenter.sh/discovery: ${CLUSTER_NAME}
+EOF
+
+
+
+
+测试deployment
+cat &lt;&lt;EOF | kubectl apply -f -
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inflate
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: inflate
+  template:
+    metadata:
+      labels:
+        app: inflate
+    spec:
+	  nodeSelector:
+		disktype: ssd
+      terminationGracePeriodSeconds: 0
+      containers:
+        - name: inflate
+          image: public.ecr.aws/eks-distro/kubernetes/pause:3.7
+          resources:
+            requests:
+              cpu: 1
+EOF
+kubectl scale deployment inflate --replicas 5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+
+
+
+<p>偷跑节点组<br>由于eks控制台展示的数据是从集群内部获取的，因此当使用provisoner创建节点的时候可以打标签偷跑，<br>eks.amazonaws.com/nodegroup=ec2-user-karpenter-demo-ng<br>测试一下就是这个标签</p>
+<pre class="line-numbers language-none"><code class="language-none">  5 apiVersion: karpenter.sh/v1alpha5
+  6 kind: Provisioner
+  7 metadata:
+  8   annotations:
+  9     kubectl.kubernetes.io/last-applied-configuration: |
+ 10       {"apiVersion":"karpenter.sh/v1alpha5","kind":"Provisioner","metadata":{"annotations":{},"name":"default"},"spec":{"limits":{"resources":{"cpu":1000}},"providerRef":{"name":"default"},"requirements":[{"key":"karpenter.sh/capacity-type","operator":"In","values":["spot"]}],"ttlSecondsAfterEmpty":30}}
+ 11   creationTimestamp: "2023-05-09T14:37:27Z"
+ 12   generation: 3
+ 13   name: default
+ 14   resourceVersion: "337668"
+ 15   uid: c132ec6f-06ae-4153-ad87-2eaf2de7ee6e
+ 16 spec:
+ 17   labels:
+ 18     alpha.eksctl.io/nodegroup-name: ec2-user-karpenter-demo-ng
+ 19     eks.amazonaws.com/nodegroup: ec2-user-karpenter-demo-ng
+ 20   limits:
+ 21     resources:
+ 22       cpu: 1k
+ 23   providerRef:
+ 24     name: default
+ 25   requirements:
+ 26   - key: karpenter.sh/capacity-type
+ 27     operator: In
+ 28     values:
+ 29     - spot
+ 30   - key: kubernetes.io/os
+ 31     operator: In
+ 32     values:
+ 33     - linux
+ 34   - key: kubernetes.io/arch
+ 35     operator: In
+ 36     values:
+ 37     - amd64
+ 38   - key: karpenter.k8s.aws/instance-category
+ 39     operator: In
+ 40     values:
+ 41     - c
+ 42     - m
+ 43     - r
+ 44   - key: karpenter.k8s.aws/instance-generation
+ 45     operator: Gt
+ 46     values:
+ 47     - "2"
+ 48   ttlSecondsAfterEmpty: 30
+ 49 status:
+ 50   resources:
+ 51     attachable-volumes-aws-ebs: "78"
+ 52     cpu: "20"
+ 53     ephemeral-storage: 41918424Ki
+ 54     memory: 46104900Ki
+ 55     pods: "292"
+~<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 
 
 
@@ -456,7 +624,7 @@ error: failed to create secret Internal error occurred: rpc error: code = Unknow
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://felixlx.github.io/2023/05/07/yi-dian-xiao-zhi-shi/">https://felixlx.github.io/2023/05/07/yi-dian-xiao-zhi-shi/</a>
+                    <a href="https://felixlx.github.io/2023/05/10/karpenter-an-zhuang-shi-yong/">https://felixlx.github.io/2023/05/10/karpenter-an-zhuang-shi-yong/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -494,8 +662,8 @@ error: failed to create secret Internal error occurred: rpc error: code = Unknow
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/eks/">
-                                    <span class="chip bg-color">eks</span>
+                                <a href="/tags/karpenter/">
+                                    <span class="chip bg-color">karpenter</span>
                                 </a>
                             
                         </div>
@@ -541,9 +709,10 @@ error: failed to create secret Internal error occurred: rpc error: code = Unknow
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2023/05/10/karpenter-an-zhuang-shi-yong/">
                     <div class="card-image">
@@ -561,9 +730,9 @@ error: failed to create secret Internal error occurred: rpc error: code = Unknow
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-05-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-10
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -572,6 +741,7 @@ error: failed to create secret Internal error occurred: rpc error: code = Unknow
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -590,13 +760,13 @@ error: failed to create secret Internal error occurred: rpc error: code = Unknow
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/05/04/first-page/">
+                <a href="/2023/05/07/yi-dian-xiao-zhi-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="tittle test">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="一点小知识">
                         
-                        <span class="card-title">tittle test</span>
+                        <span class="card-title">一点小知识</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -607,14 +777,14 @@ error: failed to create secret Internal error occurred: rpc error: code = Unknow
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-07
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/tf/" class="post-category">
-                                    tf
+                            <a href="/categories/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/" class="post-category">
+                                    未完待续
                                 </a>
                             
                             
@@ -624,8 +794,8 @@ error: failed to create secret Internal error occurred: rpc error: code = Unknow
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/tf/">
-                        <span class="chip bg-color">tf</span>
+                    <a href="/tags/eks/">
+                        <span class="chip bg-color">eks</span>
                     </a>
                     
                 </div>

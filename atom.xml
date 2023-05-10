@@ -6,7 +6,7 @@
   <link href="https://felixlx.github.io/atom.xml" rel="self"/>
   
   <link href="https://felixlx.github.io/"/>
-  <updated>2023-05-06T16:44:53.753Z</updated>
+  <updated>2023-05-10T12:29:55.971Z</updated>
   <id>https://felixlx.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>karpenter 安装使用</title>
+    <link href="https://felixlx.github.io/2023/05/10/karpenter-an-zhuang-shi-yong/"/>
+    <id>https://felixlx.github.io/2023/05/10/karpenter-an-zhuang-shi-yong/</id>
+    <published>2023-05-10T12:25:56.000Z</published>
+    <updated>2023-05-10T12:29:55.971Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本文内容非常基础，就是熟悉一下写博客，建议不用看，就是一些官方文档内容  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;karpenter-install&quot;&gt;&lt;a href=&quot;#karpenter-install&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="karpenter" scheme="https://felixlx.github.io/tags/karpenter/"/>
+    
+  </entry>
+  
+  <entry>
     <title>一点小知识</title>
     <link href="https://felixlx.github.io/2023/05/07/yi-dian-xiao-zhi-shi/"/>
     <id>https://felixlx.github.io/2023/05/07/yi-dian-xiao-zhi-shi/</id>
     <published>2023-05-06T16:20:17.000Z</published>
-    <updated>2023-05-06T16:44:53.753Z</updated>
+    <updated>2023-05-08T06:39:46.128Z</updated>
     
     
       
