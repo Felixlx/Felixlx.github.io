@@ -6,7 +6,7 @@
   <link href="https://felixlx.github.io/atom.xml" rel="self"/>
   
   <link href="https://felixlx.github.io/"/>
-  <updated>2023-05-10T13:27:12.452Z</updated>
+  <updated>2023-05-11T09:58:02.249Z</updated>
   <id>https://felixlx.github.io/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>kubernetes service account token</title>
+    <link href="https://felixlx.github.io/2023/05/11/kubernetes-service-account-token/"/>
+    <id>https://felixlx.github.io/2023/05/11/kubernetes-service-account-token/</id>
+    <published>2023-05-11T09:40:42.000Z</published>
+    <updated>2023-05-11T09:58:02.249Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h3&gt;&lt;p&gt;从k8s 1.21 开始启用了serviceaccount的BundServiceAccountTokenVolume </summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>jq学习中</title>
+    <link href="https://felixlx.github.io/2023/05/11/jq-xue-xi-zhong/"/>
+    <id>https://felixlx.github.io/2023/05/11/jq-xue-xi-zhong/</id>
+    <published>2023-05-11T07:30:20.000Z</published>
+    <updated>2023-05-11T07:32:01.483Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;jq命令的使用&quot;&gt;&lt;a href=&quot;#jq命令的使用&quot; class=&quot;headerlink&quot; title=&quot;jq命令的使用&quot;&gt;&lt;/a&gt;jq命令的使用&lt;/h2&gt;&lt;h3 id=&quot;筛选一个数据并过滤掉空值后为其拼接字符串&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="jq" scheme="https://felixlx.github.io/tags/jq/"/>
+    
+  </entry>
   
   <entry>
     <title>xray 采样规则测试</title>
