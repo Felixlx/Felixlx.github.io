@@ -340,12 +340,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%BF%AB%E9%80%9F%E6%B5%8B%E8%AF%95/">
+                                <span class="chip bg-color">快速测试</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/AWS/" class="post-category">
+                                AWS
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -441,7 +454,69 @@ status: {}
 sed 's/felix/YOUR_SA/' pods.yaml|kubectl apply -n kube-system -f -<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
-<h4 id="获取插件对应版本"><a href="#获取插件对应版本" class="headerlink" title="获取插件对应版本"></a>获取插件对应版本</h4><pre class="line-numbers language-none"><code class="language-none">aws eks describe-addon-versions --kubernetes-version 1.25 --query 'addons[].[addonName,addonVersions[].addonVersion]|[]'<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="获取插件对应版本"><a href="#获取插件对应版本" class="headerlink" title="获取插件对应版本"></a>获取插件对应版本</h4><pre class="line-numbers language-none"><code class="language-none">aws eks describe-addon-versions --kubernetes-version 1.25 --query 'addons[].[addonName,addonVersions[].addonVersion]|[]'
+
+output
+
+[
+    "vpc-cni",
+    [
+        "v1.12.6-eksbuild.2",
+        "v1.12.6-eksbuild.1",
+        "v1.12.5-eksbuild.2",
+        "v1.12.5-eksbuild.1",
+        "v1.12.2-eksbuild.1",
+        "v1.12.0-eksbuild.2",
+        "v1.11.5-eksbuild.1",
+        "v1.11.4-eksbuild.3",
+        "v1.10.4-eksbuild.3"
+    ],
+    "aws-ebs-csi-driver",
+    [
+        "v1.18.0-eksbuild.1",
+        "v1.17.0-eksbuild.1",
+        "v1.16.1-eksbuild.1",
+        "v1.16.0-eksbuild.1",
+        "v1.15.1-eksbuild.1",
+        "v1.15.0-eksbuild.1",
+        "v1.14.1-eksbuild.1",
+        "v1.14.0-eksbuild.1",
+        "v1.13.0-eksbuild.3",
+        "v1.13.0-eksbuild.2",
+        "v1.13.0-eksbuild.1",
+        "v1.12.1-eksbuild.3",
+        "v1.12.1-eksbuild.2",
+        "v1.12.1-eksbuild.1",
+        "v1.11.5-eksbuild.2",
+        "v1.11.5-eksbuild.1"
+    ],
+    "kube-proxy",
+    [
+        "v1.25.9-eksbuild.1",
+        "v1.25.6-eksbuild.2",
+        "v1.25.6-eksbuild.1",
+        "v1.24.10-eksbuild.2",
+        "v1.24.9-eksbuild.1",
+        "v1.23.16-eksbuild.2",
+        "v1.23.15-eksbuild.1"
+    ],
+    "coredns",
+    [
+        "v1.9.3-eksbuild.3",
+        "v1.9.3-eksbuild.2",
+        "v1.8.7-eksbuild.4",
+        "v1.8.7-eksbuild.3",
+        "v1.8.4-eksbuild.2"
+    ],
+    "adot",
+    [
+        "v0.74.0-eksbuild.1",
+        "v0.70.0-eksbuild.1",
+        "v0.66.0-eksbuild.1",
+        "v0.62.1-eksbuild.2"
+    ]
+]
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -504,7 +579,11 @@ sed 's/felix/YOUR_SA/' pods.yaml|kubectl apply -n kube-system -f -<span aria-hid
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E5%BF%AB%E9%80%9F%E6%B5%8B%E8%AF%95/">
+                                    <span class="chip bg-color">快速测试</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -574,13 +653,25 @@ sed 's/felix/YOUR_SA/' pods.yaml|kubectl apply -n kube-system -f -<span aria-hid
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Felix Li
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/AWS/" class="post-category">
+                                    AWS
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%BF%AB%E9%80%9F%E6%B5%8B%E8%AF%95/">
+                        <span class="chip bg-color">快速测试</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
