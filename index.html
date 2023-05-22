@@ -607,7 +607,7 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                jq命令的使用筛选一个数据并过滤掉空值后为其拼接字符串aws ecr list-images --repository-name felixreponame|jq -r '.[]|map(select(.imageTag != null a
+                                jq命令的使用筛选一个数据并过滤掉空值（处理一次）后为其拼接字符串 (前缀)aws ecr list-images --repository-name felixreponame|jq -r '.[]|map(select(.imageTa
                             
                         </div>
                         <div class="publish-info">
