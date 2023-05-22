@@ -6,7 +6,7 @@
   <link href="https://felixlx.github.io/atom.xml" rel="self"/>
   
   <link href="https://felixlx.github.io/"/>
-  <updated>2023-05-11T09:58:02.249Z</updated>
+  <updated>2023-05-22T10:57:33.256Z</updated>
   <id>https://felixlx.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>快速测试笔记</title>
+    <link href="https://felixlx.github.io/2023/05/22/kuai-su-ce-shi-bi-ji/"/>
+    <id>https://felixlx.github.io/2023/05/22/kuai-su-ce-shi-bi-ji/</id>
+    <published>2023-05-22T10:18:29.000Z</published>
+    <updated>2023-05-22T10:57:33.256Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;event-bridge-快速测试&quot;&gt;&lt;a href=&quot;#event-bridge-快速测试&quot; class=&quot;headerlink&quot; title=&quot;event bridge 快速测试&quot;&gt;&lt;/a&gt;event bridge</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>kubernetes service account token</title>
