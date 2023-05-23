@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>eks零零散散小知识</title>
+      <link href="/2023/05/23/eks-ling-ling-san-san-xiao-zhi-shi/"/>
+      <url>/2023/05/23/eks-ling-ling-san-san-xiao-zhi-shi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="EKS相关的小知识记录"><a href="#EKS相关的小知识记录" class="headerlink" title="EKS相关的小知识记录"></a>EKS相关的小知识记录</h2><h3 id="节点，ASG相关"><a href="#节点，ASG相关" class="headerlink" title="节点，ASG相关"></a>节点，ASG相关</h3><h4 id="节点组启动模板的合并"><a href="#节点组启动模板的合并" class="headerlink" title="节点组启动模板的合并"></a>节点组启动模板的合并</h4><p>在eks创建托管节点组使用模板的情况下，eks会为您创建一个新的启动模板，该模板会合并自己的启动模板里的配置和eks的配置，这个启动模板的创建规则遵循文档【1】中的描述，其中着重描述了以下内容：<br>    不要在用户数据中指定任何启动或修改 kubelet 的命令。这是作为 Amazon EKS 合并的用户数据的一部分执行的。<br>     *注 但是这个行为当您在启动模板中指定了ami之后不会自动合并，<br>【1】<a href="https://docs.amazonaws.cn/eks/latest/userguide/launch-templates.html#launch-template-custom-ami">https://docs.amazonaws.cn/eks/latest/userguide/launch-templates.html#launch-template-custom-ami</a> </p><h4 id="节点组的多可用区自动平衡"><a href="#节点组的多可用区自动平衡" class="headerlink" title="节点组的多可用区自动平衡"></a>节点组的多可用区自动平衡</h4><p>因为节点组的后边放的是asg，所以会遵循asg规则，asg会自动平衡，描述如下：</p><blockquote><p>实例启动时，如果您指定多个可用区，会为这些可用区分配所需容量。如果执行扩展操作，Amazon EC2 Auto Scaling 会自动保持您指定的所有可用区的平衡。<br><a href="https://docs.amazonaws.cn/autoscaling/ec2/userguide/auto-scaling-groups.html">https://docs.amazonaws.cn/autoscaling/ec2/userguide/auto-scaling-groups.html</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> AWS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> AWS， EKS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>快速测试笔记</title>
       <link href="/2023/05/22/kuai-su-ce-shi-bi-ji/"/>
       <url>/2023/05/22/kuai-su-ce-shi-bi-ji/</url>
