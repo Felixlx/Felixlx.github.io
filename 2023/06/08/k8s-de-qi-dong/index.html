@@ -7,10 +7,18 @@
     <meta name="keywords" content="eks启动, [object Object]">
     <meta name="description" content="
 原生kubernetes 集群启动引导
+官方文档内容
+TLS 启动引导
+初始化过程
+启动引导初始化
+
+
+
+
 eks集群的kubelet启动引导
 
 原生kubernetes 集群启动引导
-参考来源 https://github.com/zhojiew/aws-learning-notebook/blob/m">
+参考来源 https://github.com/zh">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -397,7 +405,15 @@ eks集群的kubelet启动引导
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <ul>
-<li><a href="#%E5%8E%9F%E7%94%9Fkubernetes-%E9%9B%86%E7%BE%A4%E5%90%AF%E5%8A%A8%E5%BC%95%E5%AF%BC">原生kubernetes 集群启动引导</a></li>
+<li><a href="#%E5%8E%9F%E7%94%9Fkubernetes-%E9%9B%86%E7%BE%A4%E5%90%AF%E5%8A%A8%E5%BC%95%E5%AF%BC">原生kubernetes 集群启动引导</a><ul>
+<li><a href="#%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E5%86%85%E5%AE%B9">官方文档内容</a><ul>
+<li><a href="#tls-%E5%90%AF%E5%8A%A8%E5%BC%95%E5%AF%BC">TLS 启动引导</a></li>
+<li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E8%BF%87%E7%A8%8B">初始化过程</a></li>
+<li><a href="#%E5%90%AF%E5%8A%A8%E5%BC%95%E5%AF%BC%E5%88%9D%E5%A7%8B%E5%8C%96">启动引导初始化</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="#eks%E9%9B%86%E7%BE%A4%E7%9A%84kubelet%E5%90%AF%E5%8A%A8%E5%BC%95%E5%AF%BC">eks集群的kubelet启动引导</a></li>
 </ul>
 <h2 id="原生kubernetes-集群启动引导"><a href="#原生kubernetes-集群启动引导" class="headerlink" title="原生kubernetes 集群启动引导"></a>原生kubernetes 集群启动引导</h2><blockquote>
@@ -405,7 +421,44 @@ eks集群的kubelet启动引导
 </blockquote>
 <img src="https://s2.loli.net/2023/05/20/DwbpckVa9rS37Bg.png" style="zoom:67%;">
 
-<p>一切的开始都是kubelet这个服务的启动<br>kubelet会寻找kubeconfig文件，如果没找到则</p>
+<p>一切的开始都是kubelet这个服务的启动</p>
+<h3 id="官方文档内容"><a href="#官方文档内容" class="headerlink" title="官方文档内容"></a>官方文档内容</h3><h4 id="TLS-启动引导"><a href="#TLS-启动引导" class="headerlink" title="TLS 启动引导"></a>TLS 启动引导</h4><p>在一个 Kubernetes 集群中，工作节点上的组件（kubelet 和 kube-proxy）需要与 Kubernetes 控制平面组件通信，尤其是 kube-apiserver。 为了确保通信本身是私密的、不被干扰，并且确保集群的每个组件都在与另一个可信的组件通信， 我们强烈建议使用节点上的客户端 TLS 证书。</p>
+<p>启动引导这些组件的正常过程，尤其是需要证书来与 kube-apiserver 安全通信的工作节点， 可能会是一个具有挑战性的过程，因为这一过程通常不受 Kubernetes 控制，需要不少额外工作。 这也使得初始化或者扩缩一个集群的操作变得具有挑战性。</p>
+<p>为了简化这一过程，从 1.4 版本开始，Kubernetes 引入了一个证书请求和签名 API。 该提案可在这里看到。</p>
+<p>本文档描述节点初始化的过程，如何为 kubelet 配置 TLS 客户端证书启动引导， 以及其背后的工作原理。</p>
+<h4 id="初始化过程"><a href="#初始化过程" class="headerlink" title="初始化过程"></a>初始化过程</h4><p>当工作节点启动时，kubelet 执行以下操作：</p>
+<p>寻找自己的 kubeconfig 文件<br>检索 API 服务器的 URL 和凭据，通常是来自 kubeconfig 文件中的 TLS 密钥和已签名证书<br>尝试使用这些凭据来与 API 服务器通信<br>假定 kube-apiserver 成功地认证了 kubelet 的凭据数据，它会将 kubelet 视为一个合法的节点并开始将 Pod 分派给该节点。</p>
+<p>注意，签名的过程依赖于：</p>
+<p>kubeconfig 中包含密钥和本地主机的证书<br>证书被 kube-apiserver 所信任的一个证书机构（CA）所签名<br>负责部署和管理集群的人有以下责任：</p>
+<ul>
+<li>创建 CA 密钥和证书</li>
+<li>将 CA 证书发布到 kube-apiserver 运行所在的控制平面节点上</li>
+<li>为每个 kubelet 创建密钥和证书；强烈建议为每个 kubelet 使用独一无二的、 CN 取值与众不同的密钥和证书</li>
+<li>使用 CA 密钥对 kubelet 证书签名</li>
+<li>将 kubelet 密钥和签名的证书发布到 kubelet 运行所在的特定节点上</li>
+<li>本文中描述的 TLS 启动引导过程有意简化甚至完全自动化上述过程， 尤其是第三步之后的操作，因为这些步骤是初始化或者扩缩集群时最常见的操作。</li>
+</ul>
+<h4 id="启动引导初始化"><a href="#启动引导初始化" class="headerlink" title="启动引导初始化"></a>启动引导初始化</h4><p>在启动引导初始化过程中，会发生以下事情：</p>
+<ul>
+<li>kubelet 启动</li>
+<li>kubelet 看到自己没有对应的 kubeconfig 文件</li>
+<li>kubelet 搜索并发现 bootstrap-kubeconfig 文件</li>
+<li>kubelet 读取该启动引导文件，从中获得 API 服务器的 URL 和用途有限的一个“令牌（Token）”</li>
+<li>kubelet 建立与 API 服务器的连接，使用上述令牌执行身份认证</li>
+<li>kubelet 现在拥有受限制的凭据来创建和取回证书签名请求（CSR）</li>
+<li>kubelet 为自己创建一个 CSR，并将其 signerName 设置为 kubernetes.io/kube-apiserver-client-kubelet</li>
+<li>CSR 被以如下两种方式之一批复：</li>
+<li>如果配置了，kube-controller-manager 会自动批复该 CSR</li>
+<li>如果配置了，一个外部进程，或者是人，使用 Kubernetes API 或者使用 kubectl 来批复该 CSR</li>
+<li>kubelet 所需要的证书被创建</li>
+<li>证书被发放给 kubelet</li>
+<li>kubelet 取回该证书</li>
+<li>kubelet 创建一个合适的 kubeconfig，其中包含密钥和已签名的证书</li>
+<li>kubelet 开始正常操作</li>
+<li>可选地，如果配置了，kubelet 在证书接近于过期时自动请求更新证书</li>
+<li>更新的证书被批复并发放；取决于配置，这一过程可能是自动的或者手动完成<br>本文的其余部分描述配置 TLS 启动引导的必要步骤及其局限性。</li>
+</ul>
+<p>kubelet会寻找kubeconfig文件，如果没找到则</p>
 <ul>
 <li>寻找bootstrap-kubeconfig文件开始引导过程</li>
 <li>使用bootstrap-kubeconfig文件中的api server url和token（有限权限）进行身份认证</li>
