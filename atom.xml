@@ -6,7 +6,7 @@
   <link href="https://felixlx.github.io/atom.xml" rel="self"/>
   
   <link href="https://felixlx.github.io/"/>
-  <updated>2023-06-08T15:39:49.110Z</updated>
+  <updated>2023-06-08T15:41:41.185Z</updated>
   <id>https://felixlx.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>eks启动</title>
+    <title>k8s的启动过程</title>
     <link href="https://felixlx.github.io/2023/06/08/k8s-de-qi-dong/"/>
     <id>https://felixlx.github.io/2023/06/08/k8s-de-qi-dong/</id>
     <published>2023-06-08T14:42:26.000Z</published>
-    <updated>2023-06-08T15:39:49.110Z</updated>
+    <updated>2023-06-08T15:41:41.185Z</updated>
     
     
       
