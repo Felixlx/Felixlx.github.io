@@ -6,7 +6,7 @@
   <link href="https://felixlx.github.io/atom.xml" rel="self"/>
   
   <link href="https://felixlx.github.io/"/>
-  <updated>2023-05-23T07:04:57.335Z</updated>
+  <updated>2023-06-08T05:24:58.246Z</updated>
   <id>https://felixlx.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://felixlx.github.io/2023/05/23/eks-ling-ling-san-san-xiao-zhi-shi/"/>
     <id>https://felixlx.github.io/2023/05/23/eks-ling-ling-san-san-xiao-zhi-shi/</id>
     <published>2023-05-23T06:53:57.000Z</published>
-    <updated>2023-05-23T07:04:57.335Z</updated>
+    <updated>2023-06-08T05:24:58.246Z</updated>
     
     
       
@@ -37,7 +37,9 @@
     <category term="AWS" scheme="https://felixlx.github.io/categories/AWS/"/>
     
     
-    <category term="AWS， EKS" scheme="https://felixlx.github.io/tags/AWS%EF%BC%8C-EKS/"/>
+    <category term="AWS" scheme="https://felixlx.github.io/tags/AWS/"/>
+    
+    <category term="EKS" scheme="https://felixlx.github.io/tags/EKS/"/>
     
   </entry>
   
@@ -46,7 +48,7 @@
     <link href="https://felixlx.github.io/2023/05/22/kuai-su-ce-shi-bi-ji/"/>
     <id>https://felixlx.github.io/2023/05/22/kuai-su-ce-shi-bi-ji/</id>
     <published>2023-05-22T10:18:29.000Z</published>
-    <updated>2023-05-22T12:25:14.674Z</updated>
+    <updated>2023-06-08T08:58:01.575Z</updated>
     
     
       
