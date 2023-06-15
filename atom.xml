@@ -6,7 +6,7 @@
   <link href="https://felixlx.github.io/atom.xml" rel="self"/>
   
   <link href="https://felixlx.github.io/"/>
-  <updated>2023-06-08T15:41:41.185Z</updated>
+  <updated>2023-06-14T06:53:49.025Z</updated>
   <id>https://felixlx.github.io/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>aws ElastiCache for reids basic</title>
+    <link href="https://felixlx.github.io/2023/06/13/aws-elasticache-for-reids-basic/"/>
+    <id>https://felixlx.github.io/2023/06/13/aws-elasticache-for-reids-basic/</id>
+    <published>2023-06-13T09:02:03.000Z</published>
+    <updated>2023-06-14T06:53:49.025Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#aws-elasticache-for-reids-basic&quot;&gt;aws ElastiCache for reids basic&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="aws" scheme="https://felixlx.github.io/categories/aws/"/>
+    
+    <category term="redis" scheme="https://felixlx.github.io/categories/aws/redis/"/>
+    
+    <category term="elasticache" scheme="https://felixlx.github.io/categories/aws/redis/elasticache/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>k8s的启动过程</title>
     <link href="https://felixlx.github.io/2023/06/08/k8s-de-qi-dong/"/>
     <id>https://felixlx.github.io/2023/06/08/k8s-de-qi-dong/</id>
     <published>2023-06-08T14:42:26.000Z</published>
-    <updated>2023-06-08T15:41:41.185Z</updated>
+    <updated>2023-06-08T15:42:26.373Z</updated>
     
     
       
@@ -38,17 +67,17 @@
     
     <category term="kubernetes" scheme="https://felixlx.github.io/categories/kubernetes/"/>
     
-    <category term="aws" scheme="https://felixlx.github.io/categories/kubernetes/aws/"/>
+    <category term="AWS" scheme="https://felixlx.github.io/categories/kubernetes/AWS/"/>
     
     
   </entry>
   
   <entry>
-    <title>eks零零散散小知识</title>
+    <title>eks常见问题整理</title>
     <link href="https://felixlx.github.io/2023/05/23/eks-ling-ling-san-san-xiao-zhi-shi/"/>
     <id>https://felixlx.github.io/2023/05/23/eks-ling-ling-san-san-xiao-zhi-shi/</id>
     <published>2023-05-23T06:53:57.000Z</published>
-    <updated>2023-06-08T12:12:00.522Z</updated>
+    <updated>2023-06-15T07:20:29.100Z</updated>
     
     
       
@@ -56,7 +85,7 @@
         
         
     <summary type="html">&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#eks%E7%9B%B8%E5%85%B3%E7%9A%84%E5%B0%8F%E7%9F%A5%E8%AF%86%E8%AE%B0%E5%BD%95&quot;&gt;EKS相关的小知识记录&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#eks%E7%9B%B8%E5%85%B3%E7%9A%84%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98&quot;&gt;EKS相关的常见问题&lt;/a&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a</summary>
         
       
@@ -66,9 +95,9 @@
     <category term="AWS" scheme="https://felixlx.github.io/categories/AWS/"/>
     
     
-    <category term="AWS" scheme="https://felixlx.github.io/tags/AWS/"/>
+    <category term="eks" scheme="https://felixlx.github.io/tags/eks/"/>
     
-    <category term="EKS" scheme="https://felixlx.github.io/tags/EKS/"/>
+    <category term="aws" scheme="https://felixlx.github.io/tags/aws/"/>
     
   </entry>
   

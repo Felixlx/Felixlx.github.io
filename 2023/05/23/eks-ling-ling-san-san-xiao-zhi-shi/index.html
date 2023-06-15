@@ -4,18 +4,19 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="eks零零散散小知识, [object Object]">
+    <meta name="keywords" content="eks常见问题整理, [object Object]">
     <meta name="description" content="
-EKS相关的小知识记录
+EKS相关的常见问题
 节点，ASG相关
 节点组启动模板的合并
 节点组的多可用区自动平衡
+自管理节点组加入集群
 
 
 
 
 
-EKS相关的小知识记录节点，ASG相关节点组启动模板的合并在eks创建托管节点组使用模板的情况下，eks会为您创建一个新的启动模板，该模板">
+EKS相关的常见问题节点，ASG相关节点组启动模板的合并在eks创建托管节点组使用模板的情况下，eks会为您创建一个新">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -27,7 +28,7 @@ EKS相关的小知识记录节点，ASG相关节点组启动模板的合并在ek
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>eks零零散散小知识 | Felix</title>
+    <title>eks常见问题整理 | Felix</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -323,12 +324,12 @@ EKS相关的小知识记录节点，ASG相关节点组启动模板的合并在ek
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">eks零零散散小知识</h1>
+                    <h1 class="description center-align post-title">eks常见问题整理</h1>
                 </div>
             </div>
         </div>
@@ -352,12 +353,12 @@ EKS相关的小知识记录节点，ASG相关节点组启动模板的合并在ek
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/AWS/">
-                                <span class="chip bg-color">AWS</span>
+                            <a href="/tags/eks/">
+                                <span class="chip bg-color">eks</span>
                             </a>
                         
-                            <a href="/tags/EKS/">
-                                <span class="chip bg-color">EKS</span>
+                            <a href="/tags/aws/">
+                                <span class="chip bg-color">aws</span>
                             </a>
                         
                     </div>
@@ -406,20 +407,22 @@ EKS相关的小知识记录节点，ASG相关节点组启动模板的合并在ek
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <ul>
-<li><a href="#eks%E7%9B%B8%E5%85%B3%E7%9A%84%E5%B0%8F%E7%9F%A5%E8%AF%86%E8%AE%B0%E5%BD%95">EKS相关的小知识记录</a><ul>
+<li><a href="#eks%E7%9B%B8%E5%85%B3%E7%9A%84%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98">EKS相关的常见问题</a><ul>
 <li><a href="#%E8%8A%82%E7%82%B9asg%E7%9B%B8%E5%85%B3">节点，ASG相关</a><ul>
 <li><a href="#%E8%8A%82%E7%82%B9%E7%BB%84%E5%90%AF%E5%8A%A8%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%90%88%E5%B9%B6">节点组启动模板的合并</a></li>
 <li><a href="#%E8%8A%82%E7%82%B9%E7%BB%84%E7%9A%84%E5%A4%9A%E5%8F%AF%E7%94%A8%E5%8C%BA%E8%87%AA%E5%8A%A8%E5%B9%B3%E8%A1%A1">节点组的多可用区自动平衡</a></li>
+<li><a href="#%E8%87%AA%E7%AE%A1%E7%90%86%E8%8A%82%E7%82%B9%E7%BB%84%E5%8A%A0%E5%85%A5%E9%9B%86%E7%BE%A4">自管理节点组加入集群</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="EKS相关的小知识记录"><a href="#EKS相关的小知识记录" class="headerlink" title="EKS相关的小知识记录"></a>EKS相关的小知识记录</h2><h3 id="节点，ASG相关"><a href="#节点，ASG相关" class="headerlink" title="节点，ASG相关"></a>节点，ASG相关</h3><h4 id="节点组启动模板的合并"><a href="#节点组启动模板的合并" class="headerlink" title="节点组启动模板的合并"></a>节点组启动模板的合并</h4><p>在eks创建托管节点组使用模板的情况下，eks会为您创建一个新的启动模板，该模板会合并自己的启动模板里的配置和eks的配置，这个启动模板的创建规则遵循文档【1】中的描述，其中着重描述了以下内容：<br>    不要在用户数据中指定任何启动或修改 kubelet 的命令。这是作为 Amazon EKS 合并的用户数据的一部分执行的。<br>     *注 但是这个行为当您在启动模板中指定了ami之后不会自动合并，<br>【1】<a target="_blank" rel="noopener" href="https://docs.amazonaws.cn/eks/latest/userguide/launch-templates.html#launch-template-custom-ami">https://docs.amazonaws.cn/eks/latest/userguide/launch-templates.html#launch-template-custom-ami</a> </p>
+<h2 id="EKS相关的常见问题"><a href="#EKS相关的常见问题" class="headerlink" title="EKS相关的常见问题"></a>EKS相关的常见问题</h2><h3 id="节点，ASG相关"><a href="#节点，ASG相关" class="headerlink" title="节点，ASG相关"></a>节点，ASG相关</h3><h4 id="节点组启动模板的合并"><a href="#节点组启动模板的合并" class="headerlink" title="节点组启动模板的合并"></a>节点组启动模板的合并</h4><p>在eks创建托管节点组使用模板的情况下，eks会为您创建一个新的启动模板，该模板会合并自己的启动模板里的配置和eks的配置，这个启动模板的创建规则遵循文档【1】中的描述，其中着重描述了以下内容：<br>    不要在用户数据中指定任何启动或修改 kubelet 的命令。这是作为 Amazon EKS 合并的用户数据的一部分执行的。<br>     *注 但是这个行为当您在启动模板中指定了ami之后不会自动合并，<br>【1】<a target="_blank" rel="noopener" href="https://docs.amazonaws.cn/eks/latest/userguide/launch-templates.html#launch-template-custom-ami">https://docs.amazonaws.cn/eks/latest/userguide/launch-templates.html#launch-template-custom-ami</a> </p>
 <h4 id="节点组的多可用区自动平衡"><a href="#节点组的多可用区自动平衡" class="headerlink" title="节点组的多可用区自动平衡"></a>节点组的多可用区自动平衡</h4><p>因为节点组的后边放的是asg，所以会遵循asg规则，asg会自动平衡，描述如下：</p>
 <blockquote>
 <p>实例启动时，如果您指定多个可用区，会为这些可用区分配所需容量。如果执行扩展操作，Amazon EC2 Auto Scaling 会自动保持您指定的所有可用区的平衡。<br><a target="_blank" rel="noopener" href="https://docs.amazonaws.cn/autoscaling/ec2/userguide/auto-scaling-groups.html">https://docs.amazonaws.cn/autoscaling/ec2/userguide/auto-scaling-groups.html</a></p>
 </blockquote>
+<h4 id="自管理节点组加入集群"><a href="#自管理节点组加入集群" class="headerlink" title="自管理节点组加入集群"></a>自管理节点组加入集群</h4><p>自管理节点组加入集群因为缺少了asg的lifecycle hook 无法自动调用对应的sns后边的一系列函数导致不能够使用eks集群中的controller manager这个角色 创建/更新 对应的aws-configmap， 这会导致节点不能加入集群，对应的会在kubelet的日志中报错为 not authorized to list nodes啥的，这种</p>
 
                 
             </div>
@@ -484,12 +487,12 @@ EKS相关的小知识记录节点，ASG相关节点组启动模板的合并在ek
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/AWS/">
-                                    <span class="chip bg-color">AWS</span>
+                                <a href="/tags/eks/">
+                                    <span class="chip bg-color">eks</span>
                                 </a>
                             
-                                <a href="/tags/EKS/">
-                                    <span class="chip bg-color">EKS</span>
+                                <a href="/tags/aws/">
+                                    <span class="chip bg-color">aws</span>
                                 </a>
                             
                         </div>
@@ -566,8 +569,8 @@ EKS相关的小知识记录节点，ASG相关节点组启动模板的合并在ek
                                     kubernetes
                                 </a>
                             
-                            <a href="/categories/kubernetes/aws/" class="post-category">
-                                    aws
+                            <a href="/categories/kubernetes/AWS/" class="post-category">
+                                    AWS
                                 </a>
                             
                             

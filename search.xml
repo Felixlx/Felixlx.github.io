@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>aws ElastiCache for reids basic</title>
+      <link href="/2023/06/13/aws-elasticache-for-reids-basic/"/>
+      <url>/2023/06/13/aws-elasticache-for-reids-basic/</url>
+      
+        <content type="html"><![CDATA[<ul><li><a href="#aws-elasticache-for-reids-basic">aws ElastiCache for reids basic</a><ul><li><a href="#%E6%9C%AF%E8%AF%AD%E8%AF%B4%E6%98%8E">术语说明</a><ul><li><a href="#%E5%A4%8D%E5%88%B6%E7%BB%84">复制组</a></li></ul></li><li><a href="#%E9%9D%9E%E9%9B%86%E7%BE%A4%E6%A8%A1%E5%BC%8F">非集群模式</a></li><li><a href="#%E9%9B%86%E7%BE%A4%E6%A8%A1%E5%BC%8F">集群模式</a></li></ul></li></ul><h2 id="aws-ElastiCache-for-reids-basic"><a href="#aws-ElastiCache-for-reids-basic" class="headerlink" title="aws ElastiCache for reids basic"></a>aws ElastiCache for reids basic</h2><h3 id="术语说明"><a href="#术语说明" class="headerlink" title="术语说明"></a>术语说明</h3><blockquote><p>参考文档 <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html#WhatIs.Components.Nodes">https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html#WhatIs.Components.Nodes</a></p></blockquote><h4 id="复制组"><a href="#复制组" class="headerlink" title="复制组"></a>复制组</h4><ul><li>replication Group： shards implement replicaton by 1 node as read/write Primary and up to 5 other nodes as read-only replicas </li><li>replication Group：A Redis (cluster mode disabled) replication group is a collection of clusters, where one of the clusters is a read/write primary and the others are read-only replicas. Writes to the primary are asynchronously propagated to the replicas.</li><li>自己的理解，replication group 即 复制组，之所以是一个集群的集合，节点=cache cluster，这一点在下边的文档里写了，但是单节点集群是不能叫做复制组的，因为他只有一个节点，这个节点可以叫“cluster”</li><li>复制组本身是一个仅在命令行级别存在的概念，从控制台看到的都叫集群，每一个节点组都叫做分区具体参考下边这个图片 和文档链接</li></ul><p><a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Terms.html">https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Terms.html</a></p><p><img src="https://raw.githubusercontent.com/Felixlx/images/main/20230613174742.png"></p><ul><li>cluster： A Redis cluster is a logical grouping of one or more ElastiCache for Redis shards. Data is partitioned across the shards in a Redis (cluster mode enabled) cluster.</li></ul><h3 id="非集群模式"><a href="#非集群模式" class="headerlink" title="非集群模式"></a>非集群模式</h3><ul><li>一个分片最多6节点 1主5复制</li><li>始终只有1个分区</li></ul><h3 id="集群模式"><a href="#集群模式" class="headerlink" title="集群模式"></a>集群模式</h3><ul><li>最多90分片，每一个最多6节点，所以可以有15个主节点加</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> aws </category>
+          
+          <category> redis </category>
+          
+          <category> elasticache </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>k8s的启动过程</title>
       <link href="/2023/06/08/k8s-de-qi-dong/"/>
       <url>/2023/06/08/k8s-de-qi-dong/</url>
@@ -15,7 +38,7 @@
           
           <category> kubernetes </category>
           
-          <category> aws </category>
+          <category> AWS </category>
           
       </categories>
       
@@ -25,11 +48,11 @@
     
     
     <entry>
-      <title>eks零零散散小知识</title>
+      <title>eks常见问题整理</title>
       <link href="/2023/05/23/eks-ling-ling-san-san-xiao-zhi-shi/"/>
       <url>/2023/05/23/eks-ling-ling-san-san-xiao-zhi-shi/</url>
       
-        <content type="html"><![CDATA[<ul><li><a href="#eks%E7%9B%B8%E5%85%B3%E7%9A%84%E5%B0%8F%E7%9F%A5%E8%AF%86%E8%AE%B0%E5%BD%95">EKS相关的小知识记录</a><ul><li><a href="#%E8%8A%82%E7%82%B9asg%E7%9B%B8%E5%85%B3">节点，ASG相关</a><ul><li><a href="#%E8%8A%82%E7%82%B9%E7%BB%84%E5%90%AF%E5%8A%A8%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%90%88%E5%B9%B6">节点组启动模板的合并</a></li><li><a href="#%E8%8A%82%E7%82%B9%E7%BB%84%E7%9A%84%E5%A4%9A%E5%8F%AF%E7%94%A8%E5%8C%BA%E8%87%AA%E5%8A%A8%E5%B9%B3%E8%A1%A1">节点组的多可用区自动平衡</a></li></ul></li></ul></li></ul><h2 id="EKS相关的小知识记录"><a href="#EKS相关的小知识记录" class="headerlink" title="EKS相关的小知识记录"></a>EKS相关的小知识记录</h2><h3 id="节点，ASG相关"><a href="#节点，ASG相关" class="headerlink" title="节点，ASG相关"></a>节点，ASG相关</h3><h4 id="节点组启动模板的合并"><a href="#节点组启动模板的合并" class="headerlink" title="节点组启动模板的合并"></a>节点组启动模板的合并</h4><p>在eks创建托管节点组使用模板的情况下，eks会为您创建一个新的启动模板，该模板会合并自己的启动模板里的配置和eks的配置，这个启动模板的创建规则遵循文档【1】中的描述，其中着重描述了以下内容：<br>    不要在用户数据中指定任何启动或修改 kubelet 的命令。这是作为 Amazon EKS 合并的用户数据的一部分执行的。<br>     *注 但是这个行为当您在启动模板中指定了ami之后不会自动合并，<br>【1】<a href="https://docs.amazonaws.cn/eks/latest/userguide/launch-templates.html#launch-template-custom-ami">https://docs.amazonaws.cn/eks/latest/userguide/launch-templates.html#launch-template-custom-ami</a> </p><h4 id="节点组的多可用区自动平衡"><a href="#节点组的多可用区自动平衡" class="headerlink" title="节点组的多可用区自动平衡"></a>节点组的多可用区自动平衡</h4><p>因为节点组的后边放的是asg，所以会遵循asg规则，asg会自动平衡，描述如下：</p><blockquote><p>实例启动时，如果您指定多个可用区，会为这些可用区分配所需容量。如果执行扩展操作，Amazon EC2 Auto Scaling 会自动保持您指定的所有可用区的平衡。<br><a href="https://docs.amazonaws.cn/autoscaling/ec2/userguide/auto-scaling-groups.html">https://docs.amazonaws.cn/autoscaling/ec2/userguide/auto-scaling-groups.html</a></p></blockquote>]]></content>
+        <content type="html"><![CDATA[<ul><li><a href="#eks%E7%9B%B8%E5%85%B3%E7%9A%84%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98">EKS相关的常见问题</a><ul><li><a href="#%E8%8A%82%E7%82%B9asg%E7%9B%B8%E5%85%B3">节点，ASG相关</a><ul><li><a href="#%E8%8A%82%E7%82%B9%E7%BB%84%E5%90%AF%E5%8A%A8%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%90%88%E5%B9%B6">节点组启动模板的合并</a></li><li><a href="#%E8%8A%82%E7%82%B9%E7%BB%84%E7%9A%84%E5%A4%9A%E5%8F%AF%E7%94%A8%E5%8C%BA%E8%87%AA%E5%8A%A8%E5%B9%B3%E8%A1%A1">节点组的多可用区自动平衡</a></li><li><a href="#%E8%87%AA%E7%AE%A1%E7%90%86%E8%8A%82%E7%82%B9%E7%BB%84%E5%8A%A0%E5%85%A5%E9%9B%86%E7%BE%A4">自管理节点组加入集群</a></li></ul></li></ul></li></ul><h2 id="EKS相关的常见问题"><a href="#EKS相关的常见问题" class="headerlink" title="EKS相关的常见问题"></a>EKS相关的常见问题</h2><h3 id="节点，ASG相关"><a href="#节点，ASG相关" class="headerlink" title="节点，ASG相关"></a>节点，ASG相关</h3><h4 id="节点组启动模板的合并"><a href="#节点组启动模板的合并" class="headerlink" title="节点组启动模板的合并"></a>节点组启动模板的合并</h4><p>在eks创建托管节点组使用模板的情况下，eks会为您创建一个新的启动模板，该模板会合并自己的启动模板里的配置和eks的配置，这个启动模板的创建规则遵循文档【1】中的描述，其中着重描述了以下内容：<br>    不要在用户数据中指定任何启动或修改 kubelet 的命令。这是作为 Amazon EKS 合并的用户数据的一部分执行的。<br>     *注 但是这个行为当您在启动模板中指定了ami之后不会自动合并，<br>【1】<a href="https://docs.amazonaws.cn/eks/latest/userguide/launch-templates.html#launch-template-custom-ami">https://docs.amazonaws.cn/eks/latest/userguide/launch-templates.html#launch-template-custom-ami</a> </p><h4 id="节点组的多可用区自动平衡"><a href="#节点组的多可用区自动平衡" class="headerlink" title="节点组的多可用区自动平衡"></a>节点组的多可用区自动平衡</h4><p>因为节点组的后边放的是asg，所以会遵循asg规则，asg会自动平衡，描述如下：</p><blockquote><p>实例启动时，如果您指定多个可用区，会为这些可用区分配所需容量。如果执行扩展操作，Amazon EC2 Auto Scaling 会自动保持您指定的所有可用区的平衡。<br><a href="https://docs.amazonaws.cn/autoscaling/ec2/userguide/auto-scaling-groups.html">https://docs.amazonaws.cn/autoscaling/ec2/userguide/auto-scaling-groups.html</a></p></blockquote><h4 id="自管理节点组加入集群"><a href="#自管理节点组加入集群" class="headerlink" title="自管理节点组加入集群"></a>自管理节点组加入集群</h4><p>自管理节点组加入集群因为缺少了asg的lifecycle hook 无法自动调用对应的sns后边的一系列函数导致不能够使用eks集群中的controller manager这个角色 创建/更新 对应的aws-configmap， 这会导致节点不能加入集群，对应的会在kubelet的日志中报错为 not authorized to list nodes啥的，这种</p>]]></content>
       
       
       <categories>
@@ -41,9 +64,9 @@
       
         <tags>
             
-            <tag> AWS </tag>
+            <tag> eks </tag>
             
-            <tag> EKS </tag>
+            <tag> aws </tag>
             
         </tags>
       
