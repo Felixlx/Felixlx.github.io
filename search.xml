@@ -4,6 +4,69 @@
   
     
     <entry>
+      <title>tools link</title>
+      <link href="/2023/06/19/tools-link/"/>
+      <url>/2023/06/19/tools-link/</url>
+      
+        <content type="html"><![CDATA[<ul><li><a href="#useful-tools">useful tools</a><ul><li><a href="#convert-curl-command-to-code">convert curl command to code</a></li></ul></li></ul><h2 id="useful-tools"><a href="#useful-tools" class="headerlink" title="useful tools"></a>useful tools</h2><h3 id="convert-curl-command-to-code"><a href="#convert-curl-command-to-code" class="headerlink" title="convert curl command to code"></a>convert curl command to code</h3><p><a href="https://curlconverter.com/">https://curlconverter.com/</a></p><p>find the request in your browser and copy as curl (bash) format</p><p>then it converts to code</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> tool </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>redis 基础 (ElastiCache)</title>
+      <link href="/2023/06/15/redis-ji-chu/"/>
+      <url>/2023/06/15/redis-ji-chu/</url>
+      
+        <content type="html"><![CDATA[<ul><li><a href="#elasticache-redis-%E5%9F%BA%E7%A1%80">elasticache redis 基础</a><ul><li><a href="#%E8%8A%82%E7%82%B9%E7%9B%B8%E5%85%B3">节点相关</a><ul><li><a href="#%E5%8D%95%E8%8A%82%E7%82%B9%E9%87%8D%E5%90%AF%E4%BB%85%E9%99%90%E5%B7%B2%E7%A6%81%E7%94%A8%E9%9B%86%E7%BE%A4%E6%A8%A1%E5%BC%8F">单节点重启（仅限已禁用集群模式）</a></li><li><a href="#%E8%8A%82%E7%82%B9%E6%9B%BF%E6%8D%A2">节点替换</a></li></ul></li><li><a href="#%E9%9B%86%E7%BE%A4%E7%9B%B8%E5%85%B3">集群相关</a></li></ul></li></ul><h2 id="elasticache-redis-基础"><a href="#elasticache-redis-基础" class="headerlink" title="elasticache redis 基础"></a>elasticache redis 基础</h2><h3 id="节点相关"><a href="#节点相关" class="headerlink" title="节点相关"></a>节点相关</h3><h4 id="单节点重启（仅限已禁用集群模式）"><a href="#单节点重启（仅限已禁用集群模式）" class="headerlink" title="单节点重启（仅限已禁用集群模式）"></a>单节点重启（仅限已禁用集群模式）</h4><ul><li><p>一些更改需要重启集群节点才能应用。例如，对于某些参数，对参数组中参数值的更改仅在重启后才会应用。<br>这个重启如果对象是replica结点的话，那么不会丢失数据！数据会从master 重新复制，这个过程是由aws 完全托管的<br>如果需要重启主节点， 启用故障转移情况下不能提升replica的节点 只能使用主节点故障转移</p></li><li><p>启用集群模式的情况下如果需要修改参数，那就只能手动备份后再还原了，</p></li></ul><p>这两件事儿都参考文档 </p><blockquote><p><a href="https://docs.amazonaws.cn/AmazonElastiCache/latest/red-ug/nodes.rebooting.html">https://docs.amazonaws.cn/AmazonElastiCache/latest/red-ug/nodes.rebooting.html</a></p></blockquote><h4 id="节点替换"><a href="#节点替换" class="headerlink" title="节点替换"></a>节点替换</h4><blockquote><p><a href="https://docs.amazonaws.cn/AmazonElastiCache/latest/red-ug/CacheNodes.NodeReplacement.html">https://docs.amazonaws.cn/AmazonElastiCache/latest/red-ug/CacheNodes.NodeReplacement.html</a></p></blockquote><ul><li>Amazon ElastiCache for Redis 频繁升级其机群，将补丁和升级无缝地应用于实例。但是，我们需要经常重启您的 ElastiCache for Redis 节点，以将必需的操作系统更新应用于底层主机。</li><li>如果自己在计划的替换时间前替换了节点，那么这些更新就会被应用了， 就不用再在计划节点替换的时候搞， 计划就会被取消， 但是有可能收到提醒，，可以忽略</li></ul><h3 id="集群相关"><a href="#集群相关" class="headerlink" title="集群相关"></a>集群相关</h3>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> aws </tag>
+            
+            <tag> redis </tag>
+            
+            <tag> elasticache </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>redis 常见问题 (ElastiCache)</title>
+      <link href="/2023/06/15/redis-chang-jian-wen-ti/"/>
+      <url>/2023/06/15/redis-chang-jian-wen-ti/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> aws </tag>
+            
+            <tag> redis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>aws ElastiCache for reids basic</title>
       <link href="/2023/06/13/aws-elasticache-for-reids-basic/"/>
       <url>/2023/06/13/aws-elasticache-for-reids-basic/</url>
@@ -49,10 +112,10 @@
     
     <entry>
       <title>eks常见问题整理</title>
-      <link href="/2023/05/23/eks-ling-ling-san-san-xiao-zhi-shi/"/>
-      <url>/2023/05/23/eks-ling-ling-san-san-xiao-zhi-shi/</url>
+      <link href="/2023/05/23/eks-chang-jian-wen-ti-zong-jie/"/>
+      <url>/2023/05/23/eks-chang-jian-wen-ti-zong-jie/</url>
       
-        <content type="html"><![CDATA[<ul><li><a href="#eks%E7%9B%B8%E5%85%B3%E7%9A%84%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98">EKS相关的常见问题</a><ul><li><a href="#%E8%8A%82%E7%82%B9asg%E7%9B%B8%E5%85%B3">节点，ASG相关</a><ul><li><a href="#%E8%8A%82%E7%82%B9%E7%BB%84%E5%90%AF%E5%8A%A8%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%90%88%E5%B9%B6">节点组启动模板的合并</a></li><li><a href="#%E8%8A%82%E7%82%B9%E7%BB%84%E7%9A%84%E5%A4%9A%E5%8F%AF%E7%94%A8%E5%8C%BA%E8%87%AA%E5%8A%A8%E5%B9%B3%E8%A1%A1">节点组的多可用区自动平衡</a></li><li><a href="#%E8%87%AA%E7%AE%A1%E7%90%86%E8%8A%82%E7%82%B9%E7%BB%84%E5%8A%A0%E5%85%A5%E9%9B%86%E7%BE%A4">自管理节点组加入集群</a></li></ul></li></ul></li></ul><h2 id="EKS相关的常见问题"><a href="#EKS相关的常见问题" class="headerlink" title="EKS相关的常见问题"></a>EKS相关的常见问题</h2><h3 id="节点，ASG相关"><a href="#节点，ASG相关" class="headerlink" title="节点，ASG相关"></a>节点，ASG相关</h3><h4 id="节点组启动模板的合并"><a href="#节点组启动模板的合并" class="headerlink" title="节点组启动模板的合并"></a>节点组启动模板的合并</h4><p>在eks创建托管节点组使用模板的情况下，eks会为您创建一个新的启动模板，该模板会合并自己的启动模板里的配置和eks的配置，这个启动模板的创建规则遵循文档【1】中的描述，其中着重描述了以下内容：<br>    不要在用户数据中指定任何启动或修改 kubelet 的命令。这是作为 Amazon EKS 合并的用户数据的一部分执行的。<br>     *注 但是这个行为当您在启动模板中指定了ami之后不会自动合并，<br>【1】<a href="https://docs.amazonaws.cn/eks/latest/userguide/launch-templates.html#launch-template-custom-ami">https://docs.amazonaws.cn/eks/latest/userguide/launch-templates.html#launch-template-custom-ami</a> </p><h4 id="节点组的多可用区自动平衡"><a href="#节点组的多可用区自动平衡" class="headerlink" title="节点组的多可用区自动平衡"></a>节点组的多可用区自动平衡</h4><p>因为节点组的后边放的是asg，所以会遵循asg规则，asg会自动平衡，描述如下：</p><blockquote><p>实例启动时，如果您指定多个可用区，会为这些可用区分配所需容量。如果执行扩展操作，Amazon EC2 Auto Scaling 会自动保持您指定的所有可用区的平衡。<br><a href="https://docs.amazonaws.cn/autoscaling/ec2/userguide/auto-scaling-groups.html">https://docs.amazonaws.cn/autoscaling/ec2/userguide/auto-scaling-groups.html</a></p></blockquote><h4 id="自管理节点组加入集群"><a href="#自管理节点组加入集群" class="headerlink" title="自管理节点组加入集群"></a>自管理节点组加入集群</h4><p>自管理节点组加入集群因为缺少了asg的lifecycle hook 无法自动调用对应的sns后边的一系列函数导致不能够使用eks集群中的controller manager这个角色 创建/更新 对应的aws-configmap， 这会导致节点不能加入集群，对应的会在kubelet的日志中报错为 not authorized to list nodes啥的，这种</p>]]></content>
+        <content type="html"><![CDATA[<ul><li><a href="#eks%E7%9B%B8%E5%85%B3%E7%9A%84%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98">EKS相关的常见问题</a><ul><li><a href="#%E8%8A%82%E7%82%B9asg%E7%9B%B8%E5%85%B3">节点，ASG相关</a><ul><li><a href="#%E8%8A%82%E7%82%B9%E7%BB%84%E5%90%AF%E5%8A%A8%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%90%88%E5%B9%B6">节点组启动模板的合并</a></li><li><a href="#%E8%8A%82%E7%82%B9%E7%BB%84%E7%9A%84%E5%A4%9A%E5%8F%AF%E7%94%A8%E5%8C%BA%E8%87%AA%E5%8A%A8%E5%B9%B3%E8%A1%A1">节点组的多可用区自动平衡</a></li><li><a href="#%E8%87%AA%E7%AE%A1%E7%90%86%E8%8A%82%E7%82%B9%E7%BB%84%E5%8A%A0%E5%85%A5%E9%9B%86%E7%BE%A4">自管理节点组加入集群</a></li></ul></li><li><a href="#service">service</a><ul><li><a href="#nlb%E7%9A%84%E7%9B%AE%E6%A0%87%E7%9A%84%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5%E6%9C%89%E5%A4%B1%E8%B4%A5%E7%9A%84">nlb的目标的健康检查有失败的</a><ul><li><a href="#%E6%9C%89%E5%8F%AF%E8%83%BD%E6%98%AFservice-%E4%B8%AD%E7%9A%84externaltrafficpolicy-%E5%86%99%E7%9A%84local">有可能是service 中的externalTrafficPolicy 写的local</a></li></ul></li></ul></li></ul></li></ul><h2 id="EKS相关的常见问题"><a href="#EKS相关的常见问题" class="headerlink" title="EKS相关的常见问题"></a>EKS相关的常见问题</h2><h3 id="节点，ASG相关"><a href="#节点，ASG相关" class="headerlink" title="节点，ASG相关"></a>节点，ASG相关</h3><h4 id="节点组启动模板的合并"><a href="#节点组启动模板的合并" class="headerlink" title="节点组启动模板的合并"></a>节点组启动模板的合并</h4><p>在eks创建托管节点组使用模板的情况下，eks会为您创建一个新的启动模板，该模板会合并自己的启动模板里的配置和eks的配置，这个启动模板的创建规则遵循文档【1】中的描述，其中着重描述了以下内容：<br>    不要在用户数据中指定任何启动或修改 kubelet 的命令。这是作为 Amazon EKS 合并的用户数据的一部分执行的。<br>     *注 但是这个行为当您在启动模板中指定了ami之后不会自动合并，<br>【1】<a href="https://docs.amazonaws.cn/eks/latest/userguide/launch-templates.html#launch-template-custom-ami">https://docs.amazonaws.cn/eks/latest/userguide/launch-templates.html#launch-template-custom-ami</a> </p><h4 id="节点组的多可用区自动平衡"><a href="#节点组的多可用区自动平衡" class="headerlink" title="节点组的多可用区自动平衡"></a>节点组的多可用区自动平衡</h4><p>因为节点组的后边放的是asg，所以会遵循asg规则，asg会自动平衡，描述如下：</p><blockquote><p>实例启动时，如果您指定多个可用区，会为这些可用区分配所需容量。如果执行扩展操作，Amazon EC2 Auto Scaling 会自动保持您指定的所有可用区的平衡。<br><a href="https://docs.amazonaws.cn/autoscaling/ec2/userguide/auto-scaling-groups.html">https://docs.amazonaws.cn/autoscaling/ec2/userguide/auto-scaling-groups.html</a></p></blockquote><h4 id="自管理节点组加入集群"><a href="#自管理节点组加入集群" class="headerlink" title="自管理节点组加入集群"></a>自管理节点组加入集群</h4><p>自管理节点组加入集群因为缺少了asg的lifecycle hook 无法自动调用对应的sns后边的一系列函数导致不能够使用eks集群中的controller manager这个角色 创建/更新 对应的aws-configmap， 这会导致节点不能加入集群，对应的会在kubelet的日志中报错为 not authorized to list nodes啥的，这种</p><h3 id="service"><a href="#service" class="headerlink" title="service"></a>service</h3><h4 id="nlb的目标的健康检查有失败的"><a href="#nlb的目标的健康检查有失败的" class="headerlink" title="nlb的目标的健康检查有失败的"></a>nlb的目标的健康检查有失败的</h4><h5 id="有可能是service-中的externalTrafficPolicy-写的local"><a href="#有可能是service-中的externalTrafficPolicy-写的local" class="headerlink" title="有可能是service 中的externalTrafficPolicy 写的local"></a>有可能是service 中的externalTrafficPolicy 写的local</h5><p>在 Kubernetes 中，Service 是一种抽象的概念，它可以将应用程序的多个实例绑定到一个统一的 DNS 名称或 IP 地址上，并提供负载均衡和服务发现功能。externalTrafficPolicy 是 Kubernetes 中用于控制 Service 对外流量的负载均衡策略的一个字段，它可以取值为 “Cluster” 或 “Local”，具体含义如下：</p><p>externalTrafficPolicy=Cluster<br>当 externalTrafficPolicy 的值为 “Cluster” 时，Service 会将所有的外部流量发送到集群中的任意一个节点上，并由该节点上的 kube-proxy 进行负载均衡和转发。这种负载均衡策略适用于需要将外部流量均匀分布到整个集群中的场景，但可能会产生一些额外的网络负载和延迟。</p><p>externalTrafficPolicy=Local<br>当 externalTrafficPolicy 的值为 “Local” 时，Service 只会将流量发送到与请求最近的节点上，并由该节点上的 kube-proxy 进行负载均衡和转发。这种负载均衡策略适用于需要将外部流量尽可能快地转发到最近的节点上的场景，可以减少网络负载和延迟。</p><p>需要注意的是，externalTrafficPolicy 字段只对 Service 类型为 NodePort 和 LoadBalancer 的 Service 有效。对于 ClusterIP 类型的 Service，该字段没有任何作用。同时，externalTrafficPolicy 只针对外部流量有效，对于集群内部的流量，负载均衡策略由 kube-proxy 的默认规则决定。</p><p>总的来说，externalTrafficPolicy 是 Kubernetes 中用于控制 Service 对外流量的负载均衡策略的一个字段，可以根据实际需求选择合适的策略，提高网络性能和效率。</p>]]></content>
       
       
       <categories>

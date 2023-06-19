@@ -6,7 +6,7 @@
   <link href="https://felixlx.github.io/atom.xml" rel="self"/>
   
   <link href="https://felixlx.github.io/"/>
-  <updated>2023-06-14T06:53:49.025Z</updated>
+  <updated>2023-06-19T06:05:55.467Z</updated>
   <id>https://felixlx.github.io/</id>
   
   <author>
@@ -15,6 +15,77 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>tools link</title>
+    <link href="https://felixlx.github.io/2023/06/19/tools-link/"/>
+    <id>https://felixlx.github.io/2023/06/19/tools-link/</id>
+    <published>2023-06-19T06:04:34.000Z</published>
+    <updated>2023-06-19T06:05:55.467Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#useful-tools&quot;&gt;useful tools&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#convert-curl-command-to-code&quot;&gt;convert curl command to</summary>
+        
+      
+    
+    
+    
+    <category term="tool" scheme="https://felixlx.github.io/categories/tool/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>redis 基础 (ElastiCache)</title>
+    <link href="https://felixlx.github.io/2023/06/15/redis-ji-chu/"/>
+    <id>https://felixlx.github.io/2023/06/15/redis-ji-chu/</id>
+    <published>2023-06-15T07:30:39.000Z</published>
+    <updated>2023-06-15T08:14:52.974Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#elasticache-redis-%E5%9F%BA%E7%A1%80&quot;&gt;elasticache redis 基础&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="aws" scheme="https://felixlx.github.io/tags/aws/"/>
+    
+    <category term="redis" scheme="https://felixlx.github.io/tags/redis/"/>
+    
+    <category term="elasticache" scheme="https://felixlx.github.io/tags/elasticache/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>redis 常见问题 (ElastiCache)</title>
+    <link href="https://felixlx.github.io/2023/06/15/redis-chang-jian-wen-ti/"/>
+    <id>https://felixlx.github.io/2023/06/15/redis-chang-jian-wen-ti/</id>
+    <published>2023-06-15T07:25:39.000Z</published>
+    <updated>2023-06-15T07:31:33.468Z</updated>
+    
+    
+    
+    
+    
+    <category term="aws" scheme="https://felixlx.github.io/tags/aws/"/>
+    
+    <category term="redis" scheme="https://felixlx.github.io/tags/redis/"/>
+    
+  </entry>
   
   <entry>
     <title>aws ElastiCache for reids basic</title>
@@ -74,10 +145,10 @@
   
   <entry>
     <title>eks常见问题整理</title>
-    <link href="https://felixlx.github.io/2023/05/23/eks-ling-ling-san-san-xiao-zhi-shi/"/>
-    <id>https://felixlx.github.io/2023/05/23/eks-ling-ling-san-san-xiao-zhi-shi/</id>
+    <link href="https://felixlx.github.io/2023/05/23/eks-chang-jian-wen-ti-zong-jie/"/>
+    <id>https://felixlx.github.io/2023/05/23/eks-chang-jian-wen-ti-zong-jie/</id>
     <published>2023-05-23T06:53:57.000Z</published>
-    <updated>2023-06-15T07:20:29.100Z</updated>
+    <updated>2023-06-16T13:43:08.004Z</updated>
     
     
       

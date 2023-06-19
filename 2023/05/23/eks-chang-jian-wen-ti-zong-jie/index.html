@@ -4,8 +4,18 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="标签: jq, [object Object]">
-    <meta name="description" content="Felix">
+    <meta name="keywords" content="eks常见问题整理, [object Object]">
+    <meta name="description" content="
+EKS相关的常见问题
+节点，ASG相关
+节点组启动模板的合并
+节点组的多可用区自动平衡
+自管理节点组加入集群
+
+
+service
+nlb的目标的健康检查有失败的
+有可能是service 中的externalTrafficPolicy 写的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +27,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>标签: jq | Felix</title>
+    <title>eks常见问题整理 | Felix</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -309,185 +319,442 @@
 
 </header>
 
-    <div class="bg-cover pd-header about-cover">
-    <div class="container">
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">eks常见问题整理</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
     <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                Felix blog
-                
-            </div>
-
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="/libs/typed/typed.js"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: [ 
-                            
-                                "累了就趴会儿",
-                            
-                                "Sleep anywhere when u feel tired",
-                            
-                        ],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
-                
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<script>
-    $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
-</script>
-
-
-    </div>
-</div>
-
-<main class="content">
-
-    
-
-<div id="tags" class="container chip-container">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
     <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">
-                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/eks/">
+                                <span class="chip bg-color">eks</span>
+                            </a>
+                        
+                            <a href="/tags/aws/">
+                                <span class="chip bg-color">aws</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/AWS/" class="post-category">
+                                AWS
+                            </a>
+                        
+                    </div>
+                    
+                </div>
             </div>
-            <div class="tag-chips">
+
+            <div class="post-info">
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-05-23
+                </div>
                 
-                <a href="/tags/tf/" title="tf: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="tf" style="background-color: #F9EBEA;">tf
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
+
                 
+
                 
-                <a href="/tags/eks/" title="eks: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="eks" style="background-color: #F5EEF8;">eks
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
+
                 
-                
-                <a href="/tags/karpenter/" title="karpenter: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="karpenter" style="background-color: #D5F5E3;">karpenter
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/xray-js/" title="xray, js: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="xray, js" style="background-color: #E8F8F5;">xray, js
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/jq/" title="jq: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            data-tagname="jq" style="background-color: #FEF9E7;">jq
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E5%BF%AB%E9%80%9F%E6%B5%8B%E8%AF%95/" title="快速测试: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="快速测试" style="background-color: #F8F9F9;">快速测试
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/aws/" title="aws: 3">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="aws" style="background-color: #82E0AA;">aws
-                        <span class="tag-length">3</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/redis/" title="redis: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="redis" style="background-color: #D7BDE2;">redis
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/elasticache/" title="elasticache: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="elasticache" style="background-color: #A3E4D7;">elasticache
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
+
                 
             </div>
         </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <ul>
+<li><a href="#eks%E7%9B%B8%E5%85%B3%E7%9A%84%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98">EKS相关的常见问题</a><ul>
+<li><a href="#%E8%8A%82%E7%82%B9asg%E7%9B%B8%E5%85%B3">节点，ASG相关</a><ul>
+<li><a href="#%E8%8A%82%E7%82%B9%E7%BB%84%E5%90%AF%E5%8A%A8%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%90%88%E5%B9%B6">节点组启动模板的合并</a></li>
+<li><a href="#%E8%8A%82%E7%82%B9%E7%BB%84%E7%9A%84%E5%A4%9A%E5%8F%AF%E7%94%A8%E5%8C%BA%E8%87%AA%E5%8A%A8%E5%B9%B3%E8%A1%A1">节点组的多可用区自动平衡</a></li>
+<li><a href="#%E8%87%AA%E7%AE%A1%E7%90%86%E8%8A%82%E7%82%B9%E7%BB%84%E5%8A%A0%E5%85%A5%E9%9B%86%E7%BE%A4">自管理节点组加入集群</a></li>
+</ul>
+</li>
+<li><a href="#service">service</a><ul>
+<li><a href="#nlb%E7%9A%84%E7%9B%AE%E6%A0%87%E7%9A%84%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5%E6%9C%89%E5%A4%B1%E8%B4%A5%E7%9A%84">nlb的目标的健康检查有失败的</a><ul>
+<li><a href="#%E6%9C%89%E5%8F%AF%E8%83%BD%E6%98%AFservice-%E4%B8%AD%E7%9A%84externaltrafficpolicy-%E5%86%99%E7%9A%84local">有可能是service 中的externalTrafficPolicy 写的local</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="EKS相关的常见问题"><a href="#EKS相关的常见问题" class="headerlink" title="EKS相关的常见问题"></a>EKS相关的常见问题</h2><h3 id="节点，ASG相关"><a href="#节点，ASG相关" class="headerlink" title="节点，ASG相关"></a>节点，ASG相关</h3><h4 id="节点组启动模板的合并"><a href="#节点组启动模板的合并" class="headerlink" title="节点组启动模板的合并"></a>节点组启动模板的合并</h4><p>在eks创建托管节点组使用模板的情况下，eks会为您创建一个新的启动模板，该模板会合并自己的启动模板里的配置和eks的配置，这个启动模板的创建规则遵循文档【1】中的描述，其中着重描述了以下内容：<br>    不要在用户数据中指定任何启动或修改 kubelet 的命令。这是作为 Amazon EKS 合并的用户数据的一部分执行的。<br>     *注 但是这个行为当您在启动模板中指定了ami之后不会自动合并，<br>【1】<a target="_blank" rel="noopener" href="https://docs.amazonaws.cn/eks/latest/userguide/launch-templates.html#launch-template-custom-ami">https://docs.amazonaws.cn/eks/latest/userguide/launch-templates.html#launch-template-custom-ami</a> </p>
+<h4 id="节点组的多可用区自动平衡"><a href="#节点组的多可用区自动平衡" class="headerlink" title="节点组的多可用区自动平衡"></a>节点组的多可用区自动平衡</h4><p>因为节点组的后边放的是asg，所以会遵循asg规则，asg会自动平衡，描述如下：</p>
+<blockquote>
+<p>实例启动时，如果您指定多个可用区，会为这些可用区分配所需容量。如果执行扩展操作，Amazon EC2 Auto Scaling 会自动保持您指定的所有可用区的平衡。<br><a target="_blank" rel="noopener" href="https://docs.amazonaws.cn/autoscaling/ec2/userguide/auto-scaling-groups.html">https://docs.amazonaws.cn/autoscaling/ec2/userguide/auto-scaling-groups.html</a></p>
+</blockquote>
+<h4 id="自管理节点组加入集群"><a href="#自管理节点组加入集群" class="headerlink" title="自管理节点组加入集群"></a>自管理节点组加入集群</h4><p>自管理节点组加入集群因为缺少了asg的lifecycle hook 无法自动调用对应的sns后边的一系列函数导致不能够使用eks集群中的controller manager这个角色 创建/更新 对应的aws-configmap， 这会导致节点不能加入集群，对应的会在kubelet的日志中报错为 not authorized to list nodes啥的，这种</p>
+<h3 id="service"><a href="#service" class="headerlink" title="service"></a>service</h3><h4 id="nlb的目标的健康检查有失败的"><a href="#nlb的目标的健康检查有失败的" class="headerlink" title="nlb的目标的健康检查有失败的"></a>nlb的目标的健康检查有失败的</h4><h5 id="有可能是service-中的externalTrafficPolicy-写的local"><a href="#有可能是service-中的externalTrafficPolicy-写的local" class="headerlink" title="有可能是service 中的externalTrafficPolicy 写的local"></a>有可能是service 中的externalTrafficPolicy 写的local</h5><p>在 Kubernetes 中，Service 是一种抽象的概念，它可以将应用程序的多个实例绑定到一个统一的 DNS 名称或 IP 地址上，并提供负载均衡和服务发现功能。externalTrafficPolicy 是 Kubernetes 中用于控制 Service 对外流量的负载均衡策略的一个字段，它可以取值为 “Cluster” 或 “Local”，具体含义如下：</p>
+<p>externalTrafficPolicy=Cluster<br>当 externalTrafficPolicy 的值为 “Cluster” 时，Service 会将所有的外部流量发送到集群中的任意一个节点上，并由该节点上的 kube-proxy 进行负载均衡和转发。这种负载均衡策略适用于需要将外部流量均匀分布到整个集群中的场景，但可能会产生一些额外的网络负载和延迟。</p>
+<p>externalTrafficPolicy=Local<br>当 externalTrafficPolicy 的值为 “Local” 时，Service 只会将流量发送到与请求最近的节点上，并由该节点上的 kube-proxy 进行负载均衡和转发。这种负载均衡策略适用于需要将外部流量尽可能快地转发到最近的节点上的场景，可以减少网络负载和延迟。</p>
+<p>需要注意的是，externalTrafficPolicy 字段只对 Service 类型为 NodePort 和 LoadBalancer 的 Service 有效。对于 ClusterIP 类型的 Service，该字段没有任何作用。同时，externalTrafficPolicy 只针对外部流量有效，对于集群内部的流量，负载均衡策略由 kube-proxy 的默认规则决定。</p>
+<p>总的来说，externalTrafficPolicy 是 Kubernetes 中用于控制 Service 对外流量的负载均衡策略的一个字段，可以根据实际需求选择合适的策略，提高网络性能和效率。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Felix Li</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://felixlx.github.io/2023/05/23/eks-chang-jian-wen-ti-zong-jie/">https://felixlx.github.io/2023/05/23/eks-chang-jian-wen-ti-zong-jie/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Felix Li</a>
+                    !
+                </span>
+            </div>
+        
     </div>
-</div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/eks/">
+                                    <span class="chip bg-color">eks</span>
+                                </a>
+                            
+                                <a href="/tags/aws/">
+                                    <span class="chip bg-color">aws</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
 
     
 
-    <article id="articles" class="container articles">
-        <div class="row tags-posts">
-            
-            
-            <div class="article tag-post col s12 m6 l4" data-tags="jq" data-aos="fade-up">
-                <div class="card">
-                    <a href="/2023/05/11/jq-xue-xi-zhong/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="jq学习中">
-                            
-                            <span class="card-title">jq学习中</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-11
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Felix Li
-                                
-                            </span>
-                        </div>
-                    </div>
+</div>
+
                 </div>
             </div>
             
         </div>
-    </article>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2023/06/08/k8s-de-qi-dong/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="k8s的启动过程">
+                        
+                        <span class="card-title">k8s的启动过程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-06-08
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/kubernetes/" class="post-category">
+                                    kubernetes
+                                </a>
+                            
+                            <a href="/categories/kubernetes/AWS/" class="post-category">
+                                    AWS
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/05/22/kuai-su-ce-shi-bi-ji/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="快速测试笔记">
+                        
+                        <span class="card-title">快速测试笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/AWS/" class="post-category">
+                                    AWS
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%BF%AB%E9%80%9F%E6%B5%8B%E8%AF%95/">
+                        <span class="chip bg-color">快速测试</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
 </main>
 
 
