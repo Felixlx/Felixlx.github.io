@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>驱逐和抢占</title>
+      <link href="/2023/06/27/qu-zhu-he-qiang-zhan/"/>
+      <url>/2023/06/27/qu-zhu-he-qiang-zhan/</url>
+      
+        <content type="html"><![CDATA[<h2 id="pods的驱逐与抢占测试"><a href="#pods的驱逐与抢占测试" class="headerlink" title="pods的驱逐与抢占测试"></a>pods的驱逐与抢占测试</h2><p><a href="https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/pod-priority-preemption/">https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/pod-priority-preemption/</a></p><p>当worker节点压力很大的时候，有pods会处在pending状态，这个时候可能会发生抢占<br>这里有一个很奇怪的现象就是当集群中有pending的pods的时候 如果把aws node干掉了，，，就会调度一个正常得上去，，，然后aws node 会尝试抢占他，，但是因为没有cni，，，所以这个新pod起不来也干不掉，，，aws node就抢不了他，，，，实测这个现象在pending大于2的时候发生，，，不知道为啥只有一个pending的时候就是能够调度上aws node，，，<br>解决方案是干掉kubeproxy 因为他是一个host mode 的网络，，所以能干掉，，然后aws node就上去了，，然后kubeproxy 就能抢一个普通的，，抢回来<br>问题就解决了</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> eks </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> eks </tag>
+            
+            <tag> k8s </tag>
+            
+            <tag> aws </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>tools link</title>
       <link href="/2023/06/19/tools-link/"/>
       <url>/2023/06/19/tools-link/</url>

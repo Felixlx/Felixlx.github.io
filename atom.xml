@@ -6,7 +6,7 @@
   <link href="https://felixlx.github.io/atom.xml" rel="self"/>
   
   <link href="https://felixlx.github.io/"/>
-  <updated>2023-06-19T06:05:55.467Z</updated>
+  <updated>2023-06-28T06:04:46.986Z</updated>
   <id>https://felixlx.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>驱逐和抢占</title>
+    <link href="https://felixlx.github.io/2023/06/27/qu-zhu-he-qiang-zhan/"/>
+    <id>https://felixlx.github.io/2023/06/27/qu-zhu-he-qiang-zhan/</id>
+    <published>2023-06-27T10:07:16.000Z</published>
+    <updated>2023-06-28T06:04:46.986Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;pods的驱逐与抢占测试&quot;&gt;&lt;a href=&quot;#pods的驱逐与抢占测试&quot; class=&quot;headerlink&quot; title=&quot;pods的驱逐与抢占测试&quot;&gt;&lt;/a&gt;pods的驱逐与抢占测试&lt;/h2&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="eks" scheme="https://felixlx.github.io/categories/eks/"/>
+    
+    
+    <category term="eks" scheme="https://felixlx.github.io/tags/eks/"/>
+    
+    <category term="k8s" scheme="https://felixlx.github.io/tags/k8s/"/>
+    
+    <category term="aws" scheme="https://felixlx.github.io/tags/aws/"/>
+    
+  </entry>
   
   <entry>
     <title>tools link</title>
