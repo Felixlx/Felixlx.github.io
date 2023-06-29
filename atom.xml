@@ -6,7 +6,7 @@
   <link href="https://felixlx.github.io/atom.xml" rel="self"/>
   
   <link href="https://felixlx.github.io/"/>
-  <updated>2023-06-28T06:04:46.986Z</updated>
+  <updated>2023-06-29T07:40:30.803Z</updated>
   <id>https://felixlx.github.io/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>create a new pods</title>
+    <link href="https://felixlx.github.io/2023/06/29/create-a-new-pods/"/>
+    <id>https://felixlx.github.io/2023/06/29/create-a-new-pods/</id>
+    <published>2023-06-29T07:09:04.000Z</published>
+    <updated>2023-06-29T07:40:30.803Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;创建一个新的pods，具体的流程&quot;&gt;&lt;a href=&quot;#创建一个新的pods，具体的流程&quot; class=&quot;headerlink&quot; title=&quot;创建一个新的pods，具体的流程&quot;&gt;&lt;/a&gt;创建一个新的pods，具体的流程&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;客户端向api</summary>
+        
+      
+    
+    
+    
+    <category term="k8s" scheme="https://felixlx.github.io/categories/k8s/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>驱逐和抢占</title>
     <link href="https://felixlx.github.io/2023/06/27/qu-zhu-he-qiang-zhan/"/>
     <id>https://felixlx.github.io/2023/06/27/qu-zhu-he-qiang-zhan/</id>
     <published>2023-06-27T10:07:16.000Z</published>
-    <updated>2023-06-28T06:04:46.986Z</updated>
+    <updated>2023-06-28T06:14:57.710Z</updated>
     
     
       
