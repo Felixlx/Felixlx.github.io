@@ -3,11 +3,11 @@
   <title>Felix</title>
   
   <subtitle>Felix blog</subtitle>
-  <link href="https://felixlx.github.io/atom.xml" rel="self"/>
+  <link href="https://blog.felixfelix.top/atom.xml" rel="self"/>
   
-  <link href="https://felixlx.github.io/"/>
-  <updated>2023-06-29T07:40:30.803Z</updated>
-  <id>https://felixlx.github.io/</id>
+  <link href="https://blog.felixfelix.top/"/>
+  <updated>2023-06-29T07:41:51.243Z</updated>
+  <id>https://blog.felixfelix.top/</id>
   
   <author>
     <name>Felix Li</name>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>create a new pods</title>
-    <link href="https://felixlx.github.io/2023/06/29/create-a-new-pods/"/>
-    <id>https://felixlx.github.io/2023/06/29/create-a-new-pods/</id>
+    <link href="https://blog.felixfelix.top/2023/06/29/create-a-new-pods/"/>
+    <id>https://blog.felixfelix.top/2023/06/29/create-a-new-pods/</id>
     <published>2023-06-29T07:09:04.000Z</published>
-    <updated>2023-06-29T07:40:30.803Z</updated>
+    <updated>2023-06-29T07:41:51.243Z</updated>
     
     
       
@@ -35,15 +35,15 @@
     
     
     
-    <category term="k8s" scheme="https://felixlx.github.io/categories/k8s/"/>
+    <category term="k8s" scheme="https://blog.felixfelix.top/categories/k8s/"/>
     
     
   </entry>
   
   <entry>
     <title>驱逐和抢占</title>
-    <link href="https://felixlx.github.io/2023/06/27/qu-zhu-he-qiang-zhan/"/>
-    <id>https://felixlx.github.io/2023/06/27/qu-zhu-he-qiang-zhan/</id>
+    <link href="https://blog.felixfelix.top/2023/06/27/qu-zhu-he-qiang-zhan/"/>
+    <id>https://blog.felixfelix.top/2023/06/27/qu-zhu-he-qiang-zhan/</id>
     <published>2023-06-27T10:07:16.000Z</published>
     <updated>2023-06-28T06:14:57.710Z</updated>
     
@@ -58,21 +58,21 @@
     
     
     
-    <category term="eks" scheme="https://felixlx.github.io/categories/eks/"/>
+    <category term="eks" scheme="https://blog.felixfelix.top/categories/eks/"/>
     
     
-    <category term="eks" scheme="https://felixlx.github.io/tags/eks/"/>
+    <category term="eks" scheme="https://blog.felixfelix.top/tags/eks/"/>
     
-    <category term="k8s" scheme="https://felixlx.github.io/tags/k8s/"/>
+    <category term="k8s" scheme="https://blog.felixfelix.top/tags/k8s/"/>
     
-    <category term="aws" scheme="https://felixlx.github.io/tags/aws/"/>
+    <category term="aws" scheme="https://blog.felixfelix.top/tags/aws/"/>
     
   </entry>
   
   <entry>
     <title>tools link</title>
-    <link href="https://felixlx.github.io/2023/06/19/tools-link/"/>
-    <id>https://felixlx.github.io/2023/06/19/tools-link/</id>
+    <link href="https://blog.felixfelix.top/2023/06/19/tools-link/"/>
+    <id>https://blog.felixfelix.top/2023/06/19/tools-link/</id>
     <published>2023-06-19T06:04:34.000Z</published>
     <updated>2023-06-19T06:05:55.467Z</updated>
     
@@ -89,15 +89,15 @@
     
     
     
-    <category term="tool" scheme="https://felixlx.github.io/categories/tool/"/>
+    <category term="tool" scheme="https://blog.felixfelix.top/categories/tool/"/>
     
     
   </entry>
   
   <entry>
     <title>redis 基础 (ElastiCache)</title>
-    <link href="https://felixlx.github.io/2023/06/15/redis-ji-chu/"/>
-    <id>https://felixlx.github.io/2023/06/15/redis-ji-chu/</id>
+    <link href="https://blog.felixfelix.top/2023/06/15/redis-ji-chu/"/>
+    <id>https://blog.felixfelix.top/2023/06/15/redis-ji-chu/</id>
     <published>2023-06-15T07:30:39.000Z</published>
     <updated>2023-06-15T08:14:52.974Z</updated>
     
@@ -115,18 +115,18 @@
     
     
     
-    <category term="aws" scheme="https://felixlx.github.io/tags/aws/"/>
+    <category term="aws" scheme="https://blog.felixfelix.top/tags/aws/"/>
     
-    <category term="redis" scheme="https://felixlx.github.io/tags/redis/"/>
+    <category term="redis" scheme="https://blog.felixfelix.top/tags/redis/"/>
     
-    <category term="elasticache" scheme="https://felixlx.github.io/tags/elasticache/"/>
+    <category term="elasticache" scheme="https://blog.felixfelix.top/tags/elasticache/"/>
     
   </entry>
   
   <entry>
     <title>redis 常见问题 (ElastiCache)</title>
-    <link href="https://felixlx.github.io/2023/06/15/redis-chang-jian-wen-ti/"/>
-    <id>https://felixlx.github.io/2023/06/15/redis-chang-jian-wen-ti/</id>
+    <link href="https://blog.felixfelix.top/2023/06/15/redis-chang-jian-wen-ti/"/>
+    <id>https://blog.felixfelix.top/2023/06/15/redis-chang-jian-wen-ti/</id>
     <published>2023-06-15T07:25:39.000Z</published>
     <updated>2023-06-15T07:31:33.468Z</updated>
     
@@ -134,16 +134,16 @@
     
     
     
-    <category term="aws" scheme="https://felixlx.github.io/tags/aws/"/>
+    <category term="aws" scheme="https://blog.felixfelix.top/tags/aws/"/>
     
-    <category term="redis" scheme="https://felixlx.github.io/tags/redis/"/>
+    <category term="redis" scheme="https://blog.felixfelix.top/tags/redis/"/>
     
   </entry>
   
   <entry>
     <title>aws ElastiCache for reids basic</title>
-    <link href="https://felixlx.github.io/2023/06/13/aws-elasticache-for-reids-basic/"/>
-    <id>https://felixlx.github.io/2023/06/13/aws-elasticache-for-reids-basic/</id>
+    <link href="https://blog.felixfelix.top/2023/06/13/aws-elasticache-for-reids-basic/"/>
+    <id>https://blog.felixfelix.top/2023/06/13/aws-elasticache-for-reids-basic/</id>
     <published>2023-06-13T09:02:03.000Z</published>
     <updated>2023-06-14T06:53:49.025Z</updated>
     
@@ -160,19 +160,19 @@
     
     
     
-    <category term="aws" scheme="https://felixlx.github.io/categories/aws/"/>
+    <category term="aws" scheme="https://blog.felixfelix.top/categories/aws/"/>
     
-    <category term="redis" scheme="https://felixlx.github.io/categories/aws/redis/"/>
+    <category term="redis" scheme="https://blog.felixfelix.top/categories/aws/redis/"/>
     
-    <category term="elasticache" scheme="https://felixlx.github.io/categories/aws/redis/elasticache/"/>
+    <category term="elasticache" scheme="https://blog.felixfelix.top/categories/aws/redis/elasticache/"/>
     
     
   </entry>
   
   <entry>
     <title>k8s的启动过程</title>
-    <link href="https://felixlx.github.io/2023/06/08/k8s-de-qi-dong/"/>
-    <id>https://felixlx.github.io/2023/06/08/k8s-de-qi-dong/</id>
+    <link href="https://blog.felixfelix.top/2023/06/08/k8s-de-qi-dong/"/>
+    <id>https://blog.felixfelix.top/2023/06/08/k8s-de-qi-dong/</id>
     <published>2023-06-08T14:42:26.000Z</published>
     <updated>2023-06-08T15:42:26.373Z</updated>
     
@@ -189,17 +189,17 @@
     
     
     
-    <category term="kubernetes" scheme="https://felixlx.github.io/categories/kubernetes/"/>
+    <category term="kubernetes" scheme="https://blog.felixfelix.top/categories/kubernetes/"/>
     
-    <category term="AWS" scheme="https://felixlx.github.io/categories/kubernetes/AWS/"/>
+    <category term="AWS" scheme="https://blog.felixfelix.top/categories/kubernetes/AWS/"/>
     
     
   </entry>
   
   <entry>
     <title>eks常见问题整理</title>
-    <link href="https://felixlx.github.io/2023/05/23/eks-chang-jian-wen-ti-zong-jie/"/>
-    <id>https://felixlx.github.io/2023/05/23/eks-chang-jian-wen-ti-zong-jie/</id>
+    <link href="https://blog.felixfelix.top/2023/05/23/eks-chang-jian-wen-ti-zong-jie/"/>
+    <id>https://blog.felixfelix.top/2023/05/23/eks-chang-jian-wen-ti-zong-jie/</id>
     <published>2023-05-23T06:53:57.000Z</published>
     <updated>2023-06-16T13:43:08.004Z</updated>
     
@@ -216,19 +216,19 @@
     
     
     
-    <category term="AWS" scheme="https://felixlx.github.io/categories/AWS/"/>
+    <category term="AWS" scheme="https://blog.felixfelix.top/categories/AWS/"/>
     
     
-    <category term="eks" scheme="https://felixlx.github.io/tags/eks/"/>
+    <category term="eks" scheme="https://blog.felixfelix.top/tags/eks/"/>
     
-    <category term="aws" scheme="https://felixlx.github.io/tags/aws/"/>
+    <category term="aws" scheme="https://blog.felixfelix.top/tags/aws/"/>
     
   </entry>
   
   <entry>
     <title>快速测试笔记</title>
-    <link href="https://felixlx.github.io/2023/05/22/kuai-su-ce-shi-bi-ji/"/>
-    <id>https://felixlx.github.io/2023/05/22/kuai-su-ce-shi-bi-ji/</id>
+    <link href="https://blog.felixfelix.top/2023/05/22/kuai-su-ce-shi-bi-ji/"/>
+    <id>https://blog.felixfelix.top/2023/05/22/kuai-su-ce-shi-bi-ji/</id>
     <published>2023-05-22T10:18:29.000Z</published>
     <updated>2023-06-08T08:58:01.575Z</updated>
     
@@ -243,17 +243,17 @@
     
     
     
-    <category term="AWS" scheme="https://felixlx.github.io/categories/AWS/"/>
+    <category term="AWS" scheme="https://blog.felixfelix.top/categories/AWS/"/>
     
     
-    <category term="快速测试" scheme="https://felixlx.github.io/tags/%E5%BF%AB%E9%80%9F%E6%B5%8B%E8%AF%95/"/>
+    <category term="快速测试" scheme="https://blog.felixfelix.top/tags/%E5%BF%AB%E9%80%9F%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>kubernetes service account token</title>
-    <link href="https://felixlx.github.io/2023/05/11/kubernetes-service-account-token/"/>
-    <id>https://felixlx.github.io/2023/05/11/kubernetes-service-account-token/</id>
+    <link href="https://blog.felixfelix.top/2023/05/11/kubernetes-service-account-token/"/>
+    <id>https://blog.felixfelix.top/2023/05/11/kubernetes-service-account-token/</id>
     <published>2023-05-11T09:40:42.000Z</published>
     <updated>2023-05-11T09:58:02.249Z</updated>
     
@@ -273,8 +273,8 @@
   
   <entry>
     <title>jq学习中</title>
-    <link href="https://felixlx.github.io/2023/05/11/jq-xue-xi-zhong/"/>
-    <id>https://felixlx.github.io/2023/05/11/jq-xue-xi-zhong/</id>
+    <link href="https://blog.felixfelix.top/2023/05/11/jq-xue-xi-zhong/"/>
+    <id>https://blog.felixfelix.top/2023/05/11/jq-xue-xi-zhong/</id>
     <published>2023-05-11T07:30:20.000Z</published>
     <updated>2023-05-11T10:37:11.357Z</updated>
     
@@ -290,14 +290,14 @@
     
     
     
-    <category term="jq" scheme="https://felixlx.github.io/tags/jq/"/>
+    <category term="jq" scheme="https://blog.felixfelix.top/tags/jq/"/>
     
   </entry>
   
   <entry>
     <title>xray 采样规则测试</title>
-    <link href="https://felixlx.github.io/2023/05/10/xray-cai-yang-gui-ze-ce-shi/"/>
-    <id>https://felixlx.github.io/2023/05/10/xray-cai-yang-gui-ze-ce-shi/</id>
+    <link href="https://blog.felixfelix.top/2023/05/10/xray-cai-yang-gui-ze-ce-shi/"/>
+    <id>https://blog.felixfelix.top/2023/05/10/xray-cai-yang-gui-ze-ce-shi/</id>
     <published>2023-05-10T12:39:48.000Z</published>
     <updated>2023-05-10T13:27:12.452Z</updated>
     
@@ -313,14 +313,14 @@
     
     
     
-    <category term="xray, js" scheme="https://felixlx.github.io/tags/xray-js/"/>
+    <category term="xray, js" scheme="https://blog.felixfelix.top/tags/xray-js/"/>
     
   </entry>
   
   <entry>
     <title>karpenter 安装使用</title>
-    <link href="https://felixlx.github.io/2023/05/10/karpenter-an-zhuang-shi-yong/"/>
-    <id>https://felixlx.github.io/2023/05/10/karpenter-an-zhuang-shi-yong/</id>
+    <link href="https://blog.felixfelix.top/2023/05/10/karpenter-an-zhuang-shi-yong/"/>
+    <id>https://blog.felixfelix.top/2023/05/10/karpenter-an-zhuang-shi-yong/</id>
     <published>2023-05-10T12:25:56.000Z</published>
     <updated>2023-05-10T12:29:55.971Z</updated>
     
@@ -339,14 +339,14 @@
     
     
     
-    <category term="karpenter" scheme="https://felixlx.github.io/tags/karpenter/"/>
+    <category term="karpenter" scheme="https://blog.felixfelix.top/tags/karpenter/"/>
     
   </entry>
   
   <entry>
     <title>一点小知识</title>
-    <link href="https://felixlx.github.io/2023/05/07/yi-dian-xiao-zhi-shi/"/>
-    <id>https://felixlx.github.io/2023/05/07/yi-dian-xiao-zhi-shi/</id>
+    <link href="https://blog.felixfelix.top/2023/05/07/yi-dian-xiao-zhi-shi/"/>
+    <id>https://blog.felixfelix.top/2023/05/07/yi-dian-xiao-zhi-shi/</id>
     <published>2023-05-06T16:20:17.000Z</published>
     <updated>2023-05-22T06:12:03.407Z</updated>
     
@@ -361,17 +361,17 @@
     
     
     
-    <category term="未完待续" scheme="https://felixlx.github.io/categories/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/"/>
+    <category term="未完待续" scheme="https://blog.felixfelix.top/categories/%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD/"/>
     
     
-    <category term="eks" scheme="https://felixlx.github.io/tags/eks/"/>
+    <category term="eks" scheme="https://blog.felixfelix.top/tags/eks/"/>
     
   </entry>
   
   <entry>
     <title>tittle test</title>
-    <link href="https://felixlx.github.io/2023/05/04/first-page/"/>
-    <id>https://felixlx.github.io/2023/05/04/first-page/</id>
+    <link href="https://blog.felixfelix.top/2023/05/04/first-page/"/>
+    <id>https://blog.felixfelix.top/2023/05/04/first-page/</id>
     <published>2023-05-04T09:59:39.000Z</published>
     <updated>2023-05-04T12:26:28.702Z</updated>
     
@@ -386,17 +386,17 @@
     
     
     
-    <category term="tf" scheme="https://felixlx.github.io/categories/tf/"/>
+    <category term="tf" scheme="https://blog.felixfelix.top/categories/tf/"/>
     
     
-    <category term="tf" scheme="https://felixlx.github.io/tags/tf/"/>
+    <category term="tf" scheme="https://blog.felixfelix.top/tags/tf/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://felixlx.github.io/2023/04/28/hello-world/"/>
-    <id>https://felixlx.github.io/2023/04/28/hello-world/</id>
+    <link href="https://blog.felixfelix.top/2023/04/28/hello-world/"/>
+    <id>https://blog.felixfelix.top/2023/04/28/hello-world/</id>
     <published>2023-04-28T12:28:10.571Z</published>
     <updated>2023-04-28T12:28:10.571Z</updated>
     
