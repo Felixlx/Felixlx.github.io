@@ -6,7 +6,7 @@
   <link href="https://blog.felixfelix.top/atom.xml" rel="self"/>
   
   <link href="https://blog.felixfelix.top/"/>
-  <updated>2023-06-29T07:41:51.243Z</updated>
+  <updated>2023-07-03T07:56:53.430Z</updated>
   <id>https://blog.felixfelix.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>readiness gate feature test</title>
+    <link href="https://blog.felixfelix.top/2023/07/03/readiness-gate-feature-test/"/>
+    <id>https://blog.felixfelix.top/2023/07/03/readiness-gate-feature-test/</id>
+    <published>2023-07-03T07:00:28.000Z</published>
+    <updated>2023-07-03T07:56:53.430Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;readiness-gate-test&quot;&gt;&lt;a href=&quot;#readiness-gate-test&quot; class=&quot;headerlink&quot; title=&quot;readiness gate test&quot;&gt;&lt;/a&gt;readiness gate test&lt;/h2&gt;&lt;h3</summary>
+        
+      
+    
+    
+    
+    <category term="eks" scheme="https://blog.felixfelix.top/categories/eks/"/>
+    
+    
+    <category term="eks" scheme="https://blog.felixfelix.top/tags/eks/"/>
+    
+  </entry>
   
   <entry>
     <title>create a new pods</title>
