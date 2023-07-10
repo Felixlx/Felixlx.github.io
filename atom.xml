@@ -6,7 +6,7 @@
   <link href="https://blog.felixfelix.top/atom.xml" rel="self"/>
   
   <link href="https://blog.felixfelix.top/"/>
-  <updated>2023-07-03T07:56:53.430Z</updated>
+  <updated>2023-07-07T05:17:37.077Z</updated>
   <id>https://blog.felixfelix.top/</id>
   
   <author>
@@ -15,6 +15,81 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>aws load balancer installation</title>
+    <link href="https://blog.felixfelix.top/2023/07/07/aws-load-balancer-installation/"/>
+    <id>https://blog.felixfelix.top/2023/07/07/aws-load-balancer-installation/</id>
+    <published>2023-07-07T05:15:12.000Z</published>
+    <updated>2023-07-07T05:17:37.077Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;install-with-script&quot;&gt;&lt;a href=&quot;#install-with-script&quot; class=&quot;headerlink&quot; title=&quot;install with script&quot;&gt;&lt;/a&gt;install with script&lt;/h2&gt;&lt;pre</summary>
+        
+      
+    
+    
+    
+    <category term="eks" scheme="https://blog.felixfelix.top/categories/eks/"/>
+    
+    
+    <category term="eks" scheme="https://blog.felixfelix.top/tags/eks/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>eks bootstrap.sh</title>
+    <link href="https://blog.felixfelix.top/2023/07/06/eks-bootstrap-sh/"/>
+    <id>https://blog.felixfelix.top/2023/07/06/eks-bootstrap-sh/</id>
+    <published>2023-07-06T07:47:29.000Z</published>
+    <updated>2023-07-06T08:28:10.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;bootstrap-sh-explaining&quot;&gt;&lt;a href=&quot;#bootstrap-sh-explaining&quot; class=&quot;headerlink&quot; title=&quot;bootstrap.sh explaining&quot;&gt;&lt;/a&gt;bootstrap.sh</summary>
+        
+      
+    
+    
+    
+    <category term="eks" scheme="https://blog.felixfelix.top/categories/eks/"/>
+    
+    
+    <category term="eks" scheme="https://blog.felixfelix.top/tags/eks/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>kubernetes CNI related</title>
+    <link href="https://blog.felixfelix.top/2023/07/05/kubernetes-cni-related/"/>
+    <id>https://blog.felixfelix.top/2023/07/05/kubernetes-cni-related/</id>
+    <published>2023-07-05T07:50:13.000Z</published>
+    <updated>2023-07-05T07:50:55.316Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="eks" scheme="https://blog.felixfelix.top/categories/eks/"/>
+    
+    
+    <category term="eks" scheme="https://blog.felixfelix.top/tags/eks/"/>
+    
+  </entry>
   
   <entry>
     <title>readiness gate feature test</title>
@@ -46,7 +121,7 @@
     <link href="https://blog.felixfelix.top/2023/06/29/create-a-new-pods/"/>
     <id>https://blog.felixfelix.top/2023/06/29/create-a-new-pods/</id>
     <published>2023-06-29T07:09:04.000Z</published>
-    <updated>2023-06-29T07:41:51.243Z</updated>
+    <updated>2023-07-10T12:30:22.689Z</updated>
     
     
       
